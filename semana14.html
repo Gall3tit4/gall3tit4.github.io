@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Semana 14 - Mi Portafolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+    }
+    .hero-pattern {
+      background-color: #e0e7ff;
+      background-image:
+        radial-gradient(at 40% 20%, hsla(224,76%,70%,0.3) 0px, transparent 50%),
+        radial-gradient(at 80% 0%, hsla(226,76%,70%,0.3) 0px, transparent 50%),
+        radial-gradient(at 0% 50%, hsla(221,76%,70%,0.3) 0px, transparent 50%);
+    }
+    .server-card {
+      background: linear-gradient(135deg, #f0f4ff 0%, #e0e7ff 100%);
+    }
+    .python-card {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    }
+    .flask-card {
+      background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+
+  <!-- Encabezado -->
+  <header class="hero-pattern">
+    <div class="container mx-auto px-6 py-10">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-1/2 bg-white bg-opacity-80 p-6 rounded-xl shadow-md border-l-4 border-indigo-600">
+          <h1 class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 mb-2">
+            Semana 14
+          </h1>
+          <h2 class="text-2xl md:text-3xl text-indigo-700 font-semibold mb-4">
+            Apache con Python y Flask Framework
+          </h2>
+          <p class="text-gray-700 text-lg mb-4 flex items-start gap-2">
+            <svg class="w-6 h-6 text-indigo-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 2a8 8 0 018 8v3a2 2 0 01-2 2h-1.586l-2 2H7a2 2 0 01-2-2V10a8 8 0 018-8z" clip-rule="evenodd" />
+            </svg>
+            Configuramos Apache con mod_wsgi para ejecutar aplicaciones Python, exploramos los fundamentos del lenguaje y creamos una aplicación web con Flask y Jinja2.
+          </p>
+        </div>
+        <div class="md:w-1/2 mt-10 md:mt-0">
+          <img src="https://flask.palletsprojects.com/en/3.0.x/_images/flask-logo.png" alt="Flask Framework" class="rounded-lg shadow-xl max-w-md w-full h-auto mx-auto bg-white p-4">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Resumen de la Semana</h2>
+
+      <p class="text-gray-700 mb-8 leading-relaxed max-w-3xl mx-auto text-center">
+        Integramos Python con Apache mediante mod_wsgi, aprendimos los fundamentos de Python para desarrollo web y creamos una aplicación completa con Flask, incluyendo conexión a MySQL y plantillas dinámicas con Jinja2.
+      </p>
+
+      <div class="max-w-4xl mx-auto space-y-12">
+        <!-- Sección Apache + mod_wsgi -->
+        <div class="server-card p-6 rounded-lg">
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">1. Apache con mod_wsgi</h3>
+          <p class="text-gray-700 mb-4">Configuración para ejecutar aplicaciones Python:</p>
+          
+          <div class="grid md:grid-cols-2 gap-6 mb-4">
+            <div>
+              <h4 class="font-semibold text-gray-800 mb-2">Instalación</h4>
+              <pre class="bg-white p-4 rounded-lg overflow-x-auto text-sm">
+# Instalar mod_wsgi
+pip install mod_wsgi
+
+# Configurar variable de entorno
+set MOD_WSGI_APACHE_ROOTDIR=C:/Apache24
+
+# Obtener configuración
+mod_wsgi-express module-config</pre>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-800 mb-2">httpd.conf</h4>
+              <pre class="bg-white p-4 rounded-lg overflow-x-auto text-sm">
+# Agregar al archivo de configuración
+LoadFile "C:/Python39/python39.dll"
+LoadModule wsgi_module "C:/Python39/Lib/site-packages/mod_wsgi/server/mod_wsgi.cp39-win_amd64.pyd"
+
+WSGIScriptAlias / "C:/webapps/miapp/app.wsgi"
+&lt;Directory "C:/webapps/miapp">
+  Require all granted
+&lt;/Directory></pre>
+            </div>
+          </div>
+          <p class="text-gray-700">Archivo app.wsgi básico:</p>
+          <pre class="bg-white p-4 rounded-lg overflow-x-auto text-sm">
+import sys
+sys.path.insert(0, 'C:/webapps/miapp')
+
+from mi_app import app as application</pre>
+        </div>
+
+        <!-- Sección Python -->
+        <div class="python-card p-6 rounded-lg">
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">2. Fundamentos de Python</h3>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-semibold text-gray-800 mb-2">Sintaxis básica</h4>
+              <pre class="bg-white p-4 rounded-lg overflow-x-auto text-sm">
+# Variables y tipos
+nombre = "Ana"
+edad = 30
+activo = True
+
+# Listas y diccionarios
+frutas = ["manzana", "pera"]
+persona = {"nombre": "Carlos", "edad": 25}
+
+# Funciones
+def saludar(nombre):
+    return f"Hola, {nombre}"
+
+# Clases
+class Persona:
+    def __init__(self, nombre):
+        self.nombre = nombre
+        
+    def presentarse(self):
+        print(f"Soy {self.nombre}")</pre>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-800 mb-2">PIP y entornos virtuales</h4>
+              <pre class="bg-white p-4 rounded-lg overflow-x-auto text-sm">
+# Crear entorno virtual
+python -m venv venv
+
+# Activar (Windows)
+venv\Scripts\activate
+
+# Instalar paquetes
+pip install flask pandas numpy
+
+# Guardar dependencias
+pip freeze > requirements.txt
+
+# Instalar desde requirements.txt
+pip install -r requirements.txt</pre>
+              <h4 class="font-semibold text-gray-800 mt-4 mb-2">PEP-8 Estilo</h4>
+              <ul class="list-disc list-inside text-gray-700 space-y-1">
+                <li>4 espacios por indentación</li>
+                <li>Snake_case para variables/funciones</li>
+                <li>PascalCase para clases</li>
+                <li>Líneas de máximo 79 caracteres</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sección Flask -->
+        <div class="flask-card p-6 rounded-lg">
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">3. Flask Framework</h3>
+          <p class="text-gray-700 mb-4">Microframework para aplicaciones web en Python:</p>
+          
+          <div class="grid md:grid-cols-2 gap-6 mb-4">
+            <div>
+              <h4 class="font-semibold text-gray-800 mb-2">Aplicación básica</h4>
+              <pre class="bg-white p-4 rounded-lg overflow-x-auto text-sm">
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def inicio():
+    return "¡Hola Mundo!"
+
+@app.route('/saludo/&lt;nombre>')
+def saludar(nombre):
+    return f"Hola, {nombre}!"
+
+if __name__ == '__main__':
+    app.run(debug=True)</pre>
+              
+              <h4 class="font-semibold text-gray-800 mt-4 mb-2">Estructura de proyecto</h4>
+              <pre class="bg-white p-4 rounded-lg overflow-x-auto text-sm">
+mi_app/
+├── app.py
+├── static/
+│   ├── style.css
+│   └── logo.png
+└── templates/
+    ├── base.html
+    └── index.html</pre>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-800 mb-2">Conexión a MySQL</h4>
+              <pre class="bg-white p-4 rounded-lg overflow-x-auto text-sm">
+# conexion.py
+import pymysql
+
+def obtener_conexion():
+    return pymysql.connect(
+        host='localhost',
+        user='root',
+        password='',
+        db='escuela',
+        cursorclass=pymysql.cursors.DictCursor
+    )
+
+# Uso en rutas
+@app.route('/estudiantes')
+def listar_estudiantes():
+    conexion = obtener_conexion()
+    with conexion.cursor() as cursor:
+        cursor.execute("SELECT * FROM estudiantes")
+        estudiantes = cursor.fetchall()
+    conexion.close()
+    return render_template('estudiantes.html', estudiantes=estudiantes)</pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sección Jinja2 -->
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">4. Motor de plantillas Jinja2</h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h4 class="font-semibold text-gray-800 mb-2">base.html</h4>
+              <pre class="bg-white p-4 rounded-lg overflow-x-auto text-sm">
+&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>
+    <title>{% block titulo %}Mi App{% endblock %}</title>
+&lt;/head>
+&lt;body>
+    {% block contenido %}{% endblock %}
+&lt;/body>
+&lt;/html></pre>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h4 class="font-semibold text-gray-800 mb-2">index.html</h4>
+              <pre class="bg-white p-4 rounded-lg overflow-x-auto text-sm">
+{% extends "base.html" %}
+
+{% block titulo %}Inicio{% endblock %}
+
+{% block contenido %}
+  &lt;h1>Estudiantes&lt;/h1>
+  &lt;ul>
+    {% for est in estudiantes %}
+      &lt;li>{{ est.nomEstudiante }} - {{ est.ciuEstudiante }}&lt;/li>
+    {% endfor %}
+  &lt;/ul>
+{% endblock %}</pre>
+            </div>
+          </div>
+          <div class="mt-4 grid md:grid-cols-3 gap-4">
+            <div class="bg-blue-50 p-4 rounded-lg">
+              <h5 class="font-medium text-blue-800">Condicionales</h5>
+              <pre class="bg-white mt-2 p-2 rounded text-sm">
+{% if user %}
+  Hola, {{ user.name }}
+{% else %}
+  Iniciar sesión
+{% endif %}</pre>
+            </div>
+            <div class="bg-green-50 p-4 rounded-lg">
+              <h5 class="font-medium text-green-800">Filtros</h5>
+              <pre class="bg-white mt-2 p-2 rounded text-sm">
+{{ nombre|capitalize }}
+{{ fecha|date("Y-m-d") }}
+{{ texto|truncate(50) }}</pre>
+            </div>
+            <div class="bg-purple-50 p-4 rounded-lg">
+              <h5 class="font-medium text-purple-800">Macros</h5>
+              <pre class="bg-white mt-2 p-2 rounded overflow-x-auto text-sm">
+{% macro input(name, value='', type='text') %}
+  &lt;input type="{{ type }}" name="{{ name }}" value="{{ value }}">
+{% endmacro %}
+
+{{ input('username') }}
+{{ input('password', type='password') }}</pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sección Práctica -->
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">5. Práctica: Aplicación Estudiantes</h3>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h4 class="font-semibold text-gray-800 mb-2">Modelo Estudiante</h4>
+            <pre class="bg-white p-4 rounded-lg overflow-x-auto text-sm">
+class Estudiante:
+    def __init__(self, nombre, direccion, ciudad):
+        self.nombre = nombre
+        self.direccion = direccion
+        self.ciudad = ciudad
+
+    def presentarse(self):
+        return f"{self.nombre} de {self.ciudad}"</pre>
+
+            <h4 class="font-semibold text-gray-800 mt-4 mb-2">Rutas Flask</h4>
+            <pre class="bg-white p-4 rounded-lg overflow-x-auto text-sm">
+@app.route('/estudiante/nuevo', methods=['GET', 'POST'])
+def nuevo_estudiante():
+    if request.method == 'POST':
+        nombre = request.form['nombre']
+        direccion = request.form['direccion']
+        ciudad = request.form['ciudad']
+        
+        # Guardar en base de datos
+        conexion = obtener_conexion()
+        with conexion.cursor() as cursor:
+            sql = "INSERT INTO estudiantes VALUES (NULL, %s, %s, %s)"
+            cursor.execute(sql, (nombre, direccion, ciudad))
+            conexion.commit()
+        
+        return redirect(url_for('listar_estudiantes'))
+    
+    return render_template('nuevo_estudiante.html')</pre>
+
+            <h4 class="font-semibold text-gray-800 mt-4 mb-2">Formulario</h4>
+            <pre class="bg-white p-4 rounded-lg overflow-x-auto text-sm">
+&lt;form method="POST" action="/estudiante/nuevo">
+  &lt;input type="text" name="nombre" placeholder="Nombre" required>
+  &lt;input type="text" name="direccion" placeholder="Dirección">
+  &lt;input type="text" name="ciudad" placeholder="Ciudad">
+  &lt;button type="submit">Guardar&lt;/button>
+&lt;/form></pre>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">6. Despliegue con Apache</h3>
+          <div class="bg-yellow-50 p-6 rounded-lg">
+            <ol class="list-decimal list-inside space-y-3 text-gray-800">
+              <li>Instalar mod_wsgi en el servidor</li>
+              <li>Configurar Virtual Host en Apache</li>
+              <li>Especificar el archivo .wsgi como punto de entrada</li>
+              <li>Configurar permisos para el directorio de la aplicación</li>
+              <li>Reiniciar Apache para aplicar cambios</li>
+            </ol>
+            <pre class="bg-white mt-4 p-4 rounded-lg overflow-x-auto text-sm">
+&lt;VirtualHost *:80>
+    ServerName miapp.com
+    WSGIDaemonProcess miapp python-path=/ruta/a/mi/app
+    WSGIScriptAlias / /ruta/a/mi/app/app.wsgi
+    
+    &lt;Directory /ruta/a/mi/app>
+        WSGIProcessGroup miapp
+        WSGIApplicationGroup %{GLOBAL}
+        Require all granted
+    &lt;/Directory>
+&lt;/VirtualHost></pre>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">¿Qué Aprendí?</h3>
+          <p class="text-gray-700">
+            Comprendí cómo integrar Python con Apache usando mod_wsgi, los fundamentos del lenguaje Python para desarrollo web y cómo construir aplicaciones completas con Flask. Aprendí a usar Jinja2 para crear plantillas dinámicas y a conectar la aplicación con una base de datos MySQL.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">¿Cómo Aprendí?</h3>
+          <p class="text-gray-700">
+            A través de la configuración práctica de cada componente, desde la instalación de mod_wsgi hasta la creación de una aplicación Flask funcional con conexión a base de datos. La implementación de un CRUD completo me ayudó a consolidar los conceptos.
+          </p>
+        </div>
+
+        <!-- Botón regreso -->
+        <div class="text-center mt-12">
+          <a href="index.html" class="inline-block px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition duration-300">
+            ← Volver al Inicio
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 bg-gray-900 text-white">
+    <div class="container mx-auto px-6 text-center">
+      <p>© 2025 Mi Portafolio - Curso de Desarrollo Web. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>

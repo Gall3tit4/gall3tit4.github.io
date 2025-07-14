@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Semana 11 - Mi Portafolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+    }
+    .hero-pattern {
+      background-color: #e0e7ff;
+      background-image:
+        radial-gradient(at 40% 20%, hsla(224,76%,70%,0.3) 0px, transparent 50%),
+        radial-gradient(at 80% 0%, hsla(226,76%,70%,0.3) 0px, transparent 50%),
+        radial-gradient(at 0% 50%, hsla(221,76%,70%,0.3) 0px, transparent 50%);
+    }
+    .token-flow {
+      background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+
+  <!-- Encabezado -->
+  <header class="hero-pattern">
+    <div class="container mx-auto px-6 py-10">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-1/2 bg-white bg-opacity-80 p-6 rounded-xl shadow-md border-l-4 border-indigo-600">
+          <h1 class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 mb-2">
+            Semana 11
+          </h1>
+          <h2 class="text-2xl md:text-3xl text-indigo-700 font-semibold mb-4">
+            Autenticación Basada en Tokens y JWT
+          </h2>
+          <p class="text-gray-700 text-lg mb-4 flex items-start gap-2">
+            <svg class="w-6 h-6 text-indigo-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 2a8 8 0 018 8v3a2 2 0 01-2 2h-1.586l-2 2H7a2 2 0 01-2-2V10a8 8 0 018-8z" clip-rule="evenodd" />
+            </svg>
+            Esta semana implementamos un sistema de autenticación seguro usando JSON Web Tokens (JWT), comprendiendo su flujo completo desde la generación hasta la validación en cada solicitud.
+          </p>
+        </div>
+        <div class="md:w-1/2 mt-10 md:mt-0">
+          <img src="https://miro.medium.com/v2/resize:fit:1200/1*5YQ4QJQZ9XQ3XQ3XQ3XQ3Q.png" alt="JWT Authentication" class="rounded-lg shadow-xl max-w-md w-full h-auto mx-auto" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Resumen de la Semana</h2>
+
+      <p class="text-gray-700 mb-8 leading-relaxed max-w-3xl mx-auto text-center">
+        Exploramos los fundamentos de la autenticación basada en tokens, implementando JWT en una API REST con Spring Security. Configuramos la generación de tokens, protección de rutas y manejo de permisos para crear un sistema de autenticación robusto.
+      </p>
+
+      <div class="max-w-4xl mx-auto space-y-12">
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">1. Fundamentos de Autenticación por Tokens</h3>
+          <p class="text-gray-700 mb-4">
+            La autenticación basada en tokens permite a los usuarios acceder a sistemas sin proporcionar credenciales constantemente:
+          </p>
+          <div class="token-flow p-6 rounded-lg mb-4">
+            <ol class="list-decimal list-inside space-y-3 text-gray-800">
+              <li><strong>Generación del Token:</strong> Cuando el usuario inicia sesión, el sistema autentica sus credenciales y genera un token único</li>
+              <li><strong>Uso del Token:</strong> El cliente incluye el token en el header Authorization de cada solicitud</li>
+              <li><strong>Validación:</strong> El servidor verifica la firma y vigencia del token antes de procesar la solicitud</li>
+              <li><strong>Expiración:</strong> Los tokens tienen duración limitada (ej. 24 horas) para mayor seguridad</li>
+              <li><strong>Renovación:</strong> El cliente puede solicitar un nuevo token usando un refresh token</li>
+            </ol>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">2. JSON Web Tokens (JWT)</h3>
+          <p class="text-gray-700 mb-4">JWT es el estándar más popular para autenticación basada en tokens:</p>
+          
+          <div class="grid md:grid-cols-3 gap-6 mb-4">
+            <div class="bg-indigo-50 p-4 rounded-lg">
+              <h4 class="font-semibold text-indigo-700 mb-2">Estructura</h4>
+              <ul class="list-disc list-inside text-gray-700 space-y-1">
+                <li><strong>Header:</strong> Algoritmo y tipo de token</li>
+                <li><strong>Payload:</strong> Datos del usuario (claims)</li>
+                <li><strong>Signature:</strong> Firma digital verificable</li>
+              </ul>
+            </div>
+            
+            <div class="bg-purple-50 p-4 rounded-lg">
+              <h4 class="font-semibold text-purple-700 mb-2">Ventajas</h4>
+              <ul class="list-disc list-inside text-gray-700 space-y-1">
+                <li>Stateless (no requiere sesiones)</li>
+                <li>Escalable para microservicios</li>
+                <li>Seguro (firmado digitalmente)</li>
+              </ul>
+            </div>
+            
+            <div class="bg-pink-50 p-4 rounded-lg">
+              <h4 class="font-semibold text-pink-700 mb-2">Implementación</h4>
+              <ul class="list-disc list-inside text-gray-700 space-y-1">
+                <li>Librerías para todos los lenguajes</li>
+                <li>Integración con Spring Security</li>
+                <li>Almacenamiento seguro en cliente</li>
+              </ul>
+            </div>
+          </div>
+          
+          <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">
+// Ejemplo de token JWT
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</pre>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">3. Configuración con Spring Security</h3>
+          <p class="text-gray-700 mb-4">Implementamos JWT en Spring Boot con estas dependencias:</p>
+          <ul class="list-disc list-inside mb-4 text-gray-700">
+            <li>spring-boot-starter-security</li>
+            <li>jjwt-api (Java JWT library)</li>
+            <li>jjwt-impl</li>
+            <li>jjwt-jackson</li>
+          </ul>
+          
+          <h4 class="font-semibold text-gray-800 mb-2">Clases principales:</h4>
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <h5 class="font-medium text-gray-800">JwtAuthenticationFilter</h5>
+              <p class="text-sm text-gray-600">Filtro que intercepta requests y valida el token JWT</p>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <h5 class="font-medium text-gray-800">JwtTokenProvider</h5>
+              <p class="text-sm text-gray-600">Genera y valida tokens con claves secretas</p>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <h5 class="font-medium text-gray-800">SecurityConfig</h5>
+              <p class="text-sm text-gray-600">Configura rutas protegidas y públicas</p>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <h5 class="font-medium text-gray-800">AuthController</h5>
+              <p class="text-sm text-gray-600">Endpoints para login/registro</p>
+            </div>
+          </div>
+          
+          <h4 class="font-semibold text-gray-800 mb-2">application.properties:</h4>
+          <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">
+# JWT Configuration
+jwt.secret=mySecretKey12345
+jwt.expiration=86400000 # 24 horas en ms
+jwt.header=Authorization
+jwt.prefix=Bearer</pre>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">4. Flujo de Autenticación</h3>
+          <div class="bg-blue-50 p-6 rounded-lg mb-4">
+            <ol class="list-decimal list-inside space-y-3 text-gray-800">
+              <li><strong>Login:</strong> Cliente envía credenciales a /api/auth/login</li>
+              <li><strong>Validación:</strong> Servidor verifica credenciales en base de datos</li>
+              <li><strong>Generación:</strong> Si son válidas, genera token JWT con datos del usuario</li>
+              <li><strong>Respuesta:</strong> Devuelve token al cliente (en body o cookies)</li>
+              <li><strong>Solicitudes:</strong> Cliente incluye token en header Authorization</li>
+              <li><strong>Protección:</strong> Filtro JWT valida token antes de acceder a rutas protegidas</li>
+            </ol>
+          </div>
+          <img src="https://www.bezkoder.com/wp-content/uploads/2020/03/spring-boot-jwt-authentication-flow.png" alt="Flujo JWT" class="rounded-lg shadow-lg w-full">
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">5. Buenas Prácticas de Seguridad</h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-green-50 p-4 rounded-lg">
+              <h4 class="font-semibold text-green-700 mb-2">Recomendaciones</h4>
+              <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <li>Usar HTTPS para todas las comunicaciones</li>
+                <li>Tokens con tiempo de vida corto (24h o menos)</li>
+                <li>Implementar refresh tokens para renovación</li>
+                <li>Almacenar tokens en HttpOnly cookies (para web)</li>
+                <li>Validar siempre la firma del token</li>
+              </ul>
+            </div>
+            
+            <div class="bg-red-50 p-4 rounded-lg">
+              <h4 class="font-semibold text-red-700 mb-2">Riesgos</h4>
+              <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <li>XSS (Cross-Site Scripting)</li>
+                <li>CSRF (Cross-Site Request Forgery)</li>
+                <li>Token theft (robo de tokens)</li>
+                <li>Man-in-the-middle attacks</li>
+                <li>Weak secret keys</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">6. Pruebas con Postman</h3>
+          <p class="text-gray-700 mb-4">Probamos los endpoints protegidos:</p>
+          <div class="overflow-x-auto">
+            <table class="min-w-full bg-white border border-gray-200">
+              <thead>
+                <tr class="bg-gray-100">
+                  <th class="py-2 px-4 border-b">Endpoint</th>
+                  <th class="py-2 px-4 border-b">Método</th>
+                  <th class="py-2 px-4 border-b">Headers</th>
+                  <th class="py-2 px-4 border-b">Body</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="py-2 px-4 border-b">/api/auth/login</td>
+                  <td class="py-2 px-4 border-b">POST</td>
+                  <td class="py-2 px-4 border-b">Content-Type: application/json</td>
+                  <td class="py-2 px-4 border-b">{ "username": "user", "password": "pass" }</td>
+                </tr>
+                <tr>
+                  <td class="py-2 px-4 border-b">/api/protected</td>
+                  <td class="py-2 px-4 border-b">GET</td>
+                  <td class="py-2 px-4 border-b">Authorization: Bearer [token]</td>
+                  <td class="py-2 px-4 border-b">-</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">¿Qué Aprendí?</h3>
+          <p class="text-gray-700">
+            Comprendí los fundamentos de la autenticación basada en tokens y cómo implementarla de forma segura usando JWT con Spring Security. Aprendí a proteger rutas de la API, manejar permisos, renovar tokens y las mejores prácticas de seguridad para evitar vulnerabilidades comunes.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">¿Cómo Aprendí?</h3>
+          <p class="text-gray-700">
+            A través de la implementación práctica en Spring Boot, configurando cada componente del flujo de autenticación. Realicé pruebas exhaustivas con Postman para validar el comportamiento en diferentes escenarios y analicé casos de vulnerabilidades para implementar las protecciones adecuadas.
+          </p>
+        </div>
+
+        <!-- Botón regreso -->
+        <div class="text-center mt-12">
+          <a href="index.html" class="inline-block px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition duration-300">
+            ← Volver al Inicio
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 bg-gray-900 text-white">
+    <div class="container mx-auto px-6 text-center">
+      <p>© 2025 Mi Portafolio - Curso de Desarrollo Web. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>

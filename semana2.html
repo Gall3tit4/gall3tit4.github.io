@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Semana 2 - Mi Portafolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        .hero-pattern {
+            background-color: #e0e7ff;
+            background-image:
+                radial-gradient(at 40% 20%, hsla(224,76%,70%,0.3) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, hsla(226,76%,70%,0.3) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, hsla(221,76%,70%,0.3) 0px, transparent 50%);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Header -->
+    <header class="hero-pattern">
+        <div class="container mx-auto px-6 py-10">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 bg-white bg-opacity-80 p-6 rounded-xl shadow-md border-l-4 border-indigo-600">
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 mb-2">
+                        Semana 2
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl text-indigo-700 font-semibold mb-4">
+                        Visual Studio Code y Emmet
+                    </h2>
+                    <p class="text-gray-700 text-lg mb-4">
+                        Exploramos las herramientas esenciales del editor VSCode, la paleta de comandos, terminal y Emmet para un desarrollo ágil.
+                    </p>
+                </div>
+                <div class="md:w-1/2 mt-10 md:mt-0">
+                    <img src="https://www.softzone.es/app/uploads-softzone.es/2025/03/visual-studio-code-banner-image-1.jpg" alt="VSCode Banner" class="rounded-lg shadow-xl max-w-md w-full h-auto mx-auto" />
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Resumen de la Semana</h2>
+            <p class="text-gray-700 mb-12 leading-relaxed max-w-3xl mx-auto text-center">
+                Esta semana nos enfocamos en dominar Visual Studio Code, el editor más usado para desarrollo web, desde su instalación hasta el uso de extensiones y atajos con Emmet.
+            </p>
+
+            <!-- Visual Studio Code -->
+            <div class="max-w-4xl mx-auto mb-12">
+                <h3 class="text-xl font-bold text-indigo-600 mb-4">Visual Studio Code</h3>
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Instalación:</strong> Fácil para Windows, macOS y Linux.</li>
+                        <li><strong>Interfaz:</strong> Exploración del explorador, barra lateral, terminal.</li>
+                        <li><strong>Paleta de comandos:</strong> <code>Ctrl + Shift + P</code> para acceso rápido.</li>
+                        <li><strong>Terminal integrado:</strong> Ejecutar comandos directamente en VSCode.</li>
+                    </ul>
+                    <img src="https://code.visualstudio.com/assets/docs/getstarted/userinterface/hero.png" alt="UI VSCode" class="rounded-lg shadow-lg max-w-full h-auto" />
+                </div>
+            </div>
+
+            <!-- Emmet -->
+            <div class="max-w-4xl mx-auto mb-12">
+                <h3 class="text-xl font-bold text-indigo-600 mb-4">Productividad con Emmet</h3>
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <img src="https://coderslink.com/wp-content/uploads/2019/08/Copia-de-Sin-t%C3%ADtulo.png" alt="Emmet" class="rounded-lg shadow-lg max-w-full h-auto" />
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Abreviaciones HTML:</strong> <code>div.container>ul>li.item*5</code></li>
+                        <li><strong>CSS rápido:</strong> <code>m10+p20</code> para márgenes y paddings.</li>
+                        <li><strong>Wrap with Abbreviation:</strong> Envolver bloques de código con estructuras HTML.</li>
+                        <li><strong>Navegación rápida:</strong> <code>Ctrl + Alt + →</code> entre elementos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Imágenes ejercicios -->
+            <div class="max-w-4xl mx-auto mb-12 space-y-8">
+                <h3 class="text-xl font-bold text-indigo-600 mb-4">Ejercicios de Laboratorio</h3>
+                <div class="space-y-6">
+                    <div class="text-center">
+                        <p class="font-semibold">Configuración de VSCode</p>
+                        <img src="img/config.png" alt="Config 1" class="rounded-lg shadow-lg mx-auto max-w-full" />
+                        <img src="img/config1.png" alt="Config 2" class="rounded-lg shadow-lg mx-auto max-w-full" />
+                        <img src="img/config2.png" alt="Config 3" class="rounded-lg shadow-lg mx-auto max-w-full" />
+                    </div>
+                    <div class="text-center">
+                        <p class="font-semibold">Uso de la Paleta de Comandos</p>
+                        <img src="https://decodigo.com/wp-content/uploads/2021/08/decodigo_visual_studio_code_shortcuts_windows.jpg" alt="Comandos VSCode" class="rounded-lg shadow-lg mx-auto max-w-full" style="background-color: #1e1e1e;" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reflexión -->
+            <div class="max-w-3xl mx-auto space-y-8">
+                <h3 class="text-xl font-bold text-indigo-600">¿Qué Aprendí?</h3>
+                <p>
+                    Aprendí a utilizar Visual Studio Code de forma eficiente, dominando sus funciones principales como la terminal, comandos rápidos y personalización. También usé Emmet para acelerar el desarrollo escribiendo estructuras complejas de HTML y CSS en segundos.
+                </p>
+
+                <h3 class="text-xl font-bold text-indigo-600">¿Cómo Aprendí?</h3>
+                <p>
+                    Aprendí mediante tutoriales guiados, ejercicios prácticos con plantillas reales y explorando las funciones directamente dentro del entorno de desarrollo. La práctica con Emmet fue clave para comprender su utilidad en proyectos reales.
+                </p>
+            </div>
+
+            <!-- Botón de regreso -->
+            <div class="text-center mt-16">
+                <a href="D:/UNCP/WEB DEVELOP/PLANTILLAS/CAPCHA_PORTAFOLIO/index.html" class="inline-block px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition duration-300">
+                    ← Volver al Inicio
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-gray-900 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2025 Mi Portafolio - Curso de Desarrollo Web. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

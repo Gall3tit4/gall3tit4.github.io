@@ -1,0 +1,48 @@
+/* Week page styles */
+.semana-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.semana-titulo {
+    color: #4f46e5;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.proyecto-card {
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.proyecto-titulo {
+    color: #1e40af;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.semana-imagen-container {
+    margin: 2rem 0;
+}
+
+.semana-content-block {
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .semana-content-block {
+        width: 48%;
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 2%;
+    }
+    
+    .semana-content-block:nth-child(2n) {
+        margin-right: 0;
+    }
+}

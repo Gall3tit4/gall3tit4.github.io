@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Semana 13 - Mi Portafolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+    }
+    .hero-pattern {
+      background-color: #e0e7ff;
+      background-image:
+        radial-gradient(at 40% 20%, hsla(224,76%,70%,0.3) 0px, transparent 50%),
+        radial-gradient(at 80% 0%, hsla(226,76%,70%,0.3) 0px, transparent 50%),
+        radial-gradient(at 0% 50%, hsla(221,76%,70%,0.3) 0px, transparent 50%);
+    }
+    .server-card {
+      background: linear-gradient(135deg, #f0f4ff 0%, #e0e7ff 100%);
+    }
+    .php-card {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    }
+    .laravel-card {
+      background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+
+  <!-- Encabezado -->
+  <header class="hero-pattern">
+    <div class="container mx-auto px-6 py-10">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-1/2 bg-white bg-opacity-80 p-6 rounded-xl shadow-md border-l-4 border-indigo-600">
+          <h1 class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 mb-2">
+            Semana 13
+          </h1>
+          <h2 class="text-2xl md:text-3xl text-indigo-700 font-semibold mb-4">
+            Servidores Web, PHP y Laravel Framework
+          </h2>
+          <p class="text-gray-700 text-lg mb-4 flex items-start gap-2">
+            <svg class="w-6 h-6 text-indigo-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 2a8 8 0 018 8v3a2 2 0 01-2 2h-1.586l-2 2H7a2 2 0 01-2-2V10a8 8 0 018-8z" clip-rule="evenodd" />
+            </svg>
+            Esta semana exploramos el servidor web Apache, los fundamentos del lenguaje PHP y la creación de aplicaciones web modernas con el framework Laravel.
+          </p>
+        </div>
+        <div class="md:w-1/2 mt-10 md:mt-0">
+          <img src="https://laravel.com/img/logomark.min.svg" alt="Laravel Framework" class="rounded-lg shadow-xl max-w-md w-full h-auto mx-auto">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Resumen de la Semana</h2>
+
+      <p class="text-gray-700 mb-8 leading-relaxed max-w-3xl mx-auto text-center">
+        Configuramos un entorno de desarrollo completo con Apache como servidor web, PHP como lenguaje backend y Laravel como framework para desarrollo ágil de aplicaciones web.
+      </p>
+
+      <div class="max-w-4xl mx-auto space-y-12">
+        <!-- Sección Apache -->
+        <div class="server-card p-6 rounded-lg">
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">1. Apache HTTP Server</h3>
+          <p class="text-gray-700 mb-4">El servidor web más popular para entregar contenido web:</p>
+          
+          <div class="grid md:grid-cols-2 gap-6 mb-4">
+            <div>
+              <h4 class="font-semibold text-gray-800 mb-2">Instalación con Apache Lounge</h4>
+              <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                <li>Descargar binarios desde apachelounge.com</li>
+                <li>Extraer ZIP en D:\Server\Apache24</li>
+                <li>Configurar httpd.conf:
+                  <pre class="bg-white mt-2 p-2 rounded text-sm">
+Listen 8080
+ServerName localhost:8080
+Define SRVROOT "D:\Server\Apache24"</pre>
+                </li>
+                <li>Ejecutar httpd.exe</li>
+              </ol>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-800 mb-2">Directivas principales</h4>
+              <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <li><strong>DocumentRoot:</strong> Directorio raíz del sitio</li>
+                <li><strong>DirectoryIndex:</strong> Archivo índice (index.html, index.php)</li>
+                <li><strong>ErrorLog:</strong> Ruta para logs de errores</li>
+                <li><strong>LoadModule:</strong> Carga módulos adicionales</li>
+              </ul>
+              <img src="https://httpd.apache.org/docs/2.4/images/apache_pb.gif" alt="Apache Logo" class="mt-4 mx-auto">
+            </div>
+          </div>
+        </div>
+
+        <!-- Sección PHP -->
+        <div class="php-card p-6 rounded-lg">
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">2. PHP: Lenguaje del lado del servidor</h3>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-semibold text-gray-800 mb-2">Instalación en Windows</h4>
+              <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                <li>Descargar ZIP desde windows.php.net</li>
+                <li>Extraer en D:\Server\PHP</li>
+                <li>Configurar php.ini:
+                  <pre class="bg-white mt-2 p-2 rounded text-sm">
+extension_dir = "ext"
+extension=mysqli
+extension=curl</pre>
+                </li>
+                <li>Agregar PHP al PATH del sistema</li>
+                <li>Verificar con <code>php -v</code></li>
+              </ol>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-800 mb-2">Sintaxis básica</h4>
+              <pre class="bg-white p-4 rounded-lg overflow-x-auto text-sm">
+<?php
+// Variables
+$nombre = "Juan";
+$edad = 25;
+
+// Condicionales
+if ($edad >= 18) {
+    echo "Mayor de edad";
+} else {
+    echo "Menor de edad";
+}
+
+// Bucles
+for ($i = 0; $i < 5; $i++) {
+    echo "Número: $i";
+}
+
+// Funciones
+function saludar($nombre) {
+    return "Hola, $nombre!";
+}
+?></pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sección Laravel -->
+        <div class="laravel-card p-6 rounded-lg">
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">3. Laravel Framework</h3>
+          <p class="text-gray-700 mb-4">Framework PHP moderno para desarrollo web:</p>
+          
+          <div class="grid md:grid-cols-2 gap-6 mb-4">
+            <div>
+              <h4 class="font-semibold text-gray-800 mb-2">Instalación con Composer</h4>
+              <pre class="bg-white p-4 rounded-lg overflow-x-auto text-sm">
+# Crear nuevo proyecto
+composer create-project laravel/laravel mi-proyecto
+
+# Entrar al directorio
+cd mi-proyecto
+
+# Iniciar servidor
+php artisan serve</pre>
+              
+              <h4 class="font-semibold text-gray-800 mt-4 mb-2">Estructura de directorios</h4>
+              <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <li><strong>app/</strong>: Lógica de la aplicación</li>
+                <li><strong>routes/</strong>: Definición de rutas</li>
+                <li><strong>resources/</strong>: Vistas y assets</li>
+                <li><strong>database/</strong>: Migraciones y seeds</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-800 mb-2">Componentes principales</h4>
+              <div class="space-y-4">
+                <div>
+                  <h5 class="font-medium text-gray-800">Eloquent ORM</h5>
+                  <p class="text-sm text-gray-600">Sistema de base de datos intuitivo</p>
+                  <pre class="bg-white mt-1 p-2 rounded text-sm">
+// Obtener todos los estudiantes
+$estudiantes = Estudiante::all();</pre>
+                </div>
+                <div>
+                  <h5 class="font-medium text-gray-800">Blade Templates</h5>
+                  <p class="text-sm text-gray-600">Motor de plantillas</p>
+                  <pre class="bg-white mt-1 p-2 rounded text-sm">
+@foreach($estudiantes as $est)
+  &lt;p>{{ $est->nombre }}&lt;/p>
+@endforeach</pre>
+                </div>
+                <div>
+                  <h5 class="font-medium text-gray-800">Artisan CLI</h5>
+                  <p class="text-sm text-gray-600">Herramienta de línea de comandos</p>
+                  <pre class="bg-white mt-1 p-2 rounded text-sm">
+# Crear nuevo controlador
+php artisan make:controller EstudianteController</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sección Práctica -->
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">4. Práctica: Aplicación Estudiantes</h3>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h4 class="font-semibold text-gray-800 mb-2">Configuración inicial</h4>
+            <pre class="bg-white p-4 rounded-lg overflow-x-auto text-sm">
+# .env
+DB_DATABASE=academico
+DB_USERNAME=root
+DB_PASSWORD=tu_contraseña</pre>
+
+            <h4 class="font-semibold text-gray-800 mt-4 mb-2">Migración</h4>
+            <pre class="bg-white p-4 rounded-lg overflow-x-auto text-sm">
+# database/migrations/xxxx_create_estudiantes_table.php
+Schema::create('estudiantes', function (Blueprint $table) {
+    $table->id('idEstudiante');
+    $table->string('nomEstudiante');
+    $table->string('dirEstudiante');
+    $table->string('ciuEstudiante');
+    $table->timestamps();
+});</pre>
+
+            <h4 class="font-semibold text-gray-800 mt-4 mb-2">Vista con Tailwind</h4>
+            <pre class="bg-white p-4 rounded-lg overflow-x-auto text-sm">
+&lt;form class="bg-white p-6 rounded shadow-md w-96">
+    @csrf
+    &lt;input type="text" name="nombre" class="w-full mb-3 p-2 border rounded">
+    &lt;button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">
+        Guardar
+    &lt;/button>
+&lt;/form></pre>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">5. Flujo completo</h3>
+          <div class="bg-blue-50 p-6 rounded-lg">
+            <ol class="list-decimal list-inside space-y-3 text-gray-800">
+              <li><strong>Request:</strong> Navegador solicita URL (Apache)</li>
+              <li><strong>Routing:</strong> Laravel determina la ruta correspondiente</li>
+              <li><strong>Controller:</strong> Ejecuta lógica de negocio</li>
+              <li><strong>Model:</strong> Interactúa con la base de datos</li>
+              <li><strong>View:</strong> Renderiza plantilla Blade con datos</li>
+              <li><strong>Response:</strong> Apache envía HTML al navegador</li>
+            </ol>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">¿Qué Aprendí?</h3>
+          <p class="text-gray-700">
+            Comprendí la arquitectura de servidores web con Apache, los fundamentos del lenguaje PHP y cómo Laravel simplifica el desarrollo de aplicaciones web modernas con su conjunto de herramientas y convenciones. Aprendí a configurar un entorno completo y a implementar operaciones CRUD básicas.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">¿Cómo Aprendí?</h3>
+          <p class="text-gray-700">
+            A través de la instalación práctica de cada componente, configurando manualmente Apache y PHP, y luego experimentando con Laravel para crear una aplicación funcional. La combinación de teoría y práctica me permitió entender cómo interactúan estas tecnologías en un proyecto real.
+          </p>
+        </div>
+
+        <!-- Botón regreso -->
+        <div class="text-center mt-12">
+          <a href="index.html" class="inline-block px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition duration-300">
+            ← Volver al Inicio
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 bg-gray-900 text-white">
+    <div class="container mx-auto px-6 text-center">
+      <p>© 2025 Mi Portafolio - Curso de Desarrollo Web. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>

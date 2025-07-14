@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio - Curso Desarrollo Web</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        
+        .week-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero-pattern {
+            background-color: #e0e7ff;
+            background-image: 
+                radial-gradient(at 40% 20%, hsla(224,76%,70%,0.3) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, hsla(226,76%,70%,0.3) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, hsla(221,76%,70%,0.3) 0px, transparent 50%);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Header -->
+    <header class="hero-pattern">
+        <div class="container mx-auto px-6 py-16">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-2">Mi Portafolio</h1>
+                    <h2 class="text-2xl md:text-3xl text-indigo-700 mb-4">Curso de Desarrollo Web</h2>
+                    <p class="text-gray-700 text-lg mb-8">Un recorrido por mis semanas de aprendizaje y proyectos.</p>
+                    <div class="space-x-4">
+                        <a href="#sobre-mi" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition duration-300">Sobre mí</a>
+                        <a href="#semanas" class="inline-block border border-indigo-600 text-indigo-600 px-6 py-3 rounded-lg hover:bg-indigo-50 transition duration-300">Explorar semanas</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 mt-10 md:mt-0">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cf7b5be9-eda5-4bc6-8dba-2b8b236987c5.png" alt="Desarrollador web trabajando en ordenador con múltiples pantallas mostrando código y diseños" class="rounded-lg shadow-xl" />
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="sobre-mi" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-8 md:mb-0 md:pr-8">
+                    <img src="img/1_72940787.jpg" alt="Tu foto profesional" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="md:w-2/3">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Sobre Mí</h2>
+                    <p class="text-gray-700 mb-4 leading-relaxed">
+                        Mi nombre es <strong>Dilhan Capcha</strong>. Realicé mis estudios escolares en el <strong>Colegio de Alto Rendimiento (COAR)</strong>, una institución que me brindó una sólida formación académica y personal. Actualmente, soy estudiante de la <strong>Universidad Nacional Daniel Alcides Carrión (UNDAC)</strong>, ubicada en Cerro de Pasco. Gracias a un programa de movilidad estudiantil, en este momento me encuentro cursando estudios en la <strong>Universidad Nacional del Centro del Perú (UNCP)</strong>, lo cual me ha permitido ampliar mis horizontes académicos y profesionales.
+                    </p>
+                    <p class="text-gray-700 mb-4 leading-relaxed">
+                        En cuanto a mi experiencia, he tenido la oportunidad de participar en el desarrollo de un sistema de compra y venta, donde me enfoqué principalmente en la parte front-end, área que me apasiona y en la que busco seguir perfeccionándome. Además, desarrollé una aplicación web responsiva en tiempo real para el monitoreo del riego de un huerto en la UNDAC, un proyecto que me permitió aplicar mis conocimientos en entornos reales y que combina tecnología con sostenibilidad.
+                    </p>
+                    <p class="text-gray-700 mb-4 leading-relaxed">
+                        Como experiencia adicional, también me desempeñé como operador en <strong>Radio Altura</strong>, lo que fortaleció mis habilidades comunicativas, mi responsabilidad y mi capacidad para trabajar bajo presión.
+                    </p>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold text-indigo-600 mb-4">Mis Habilidades</h3>
+                        <div class="flex flex-wrap gap-4">
+                            <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full">HTML</span>
+                            <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full">CSS</span>
+                            <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full">JavaScript</span>
+                            <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full">Phyton</span>
+                            <!-- Add more skills as needed -->
+                        </div>
+                    </div>
+                    
+                    <a href="https://drive.google.com/file/d/1OZco1Q16vg4Sz-5idVzbqk6bR97N3Jdd/view?usp=drive_link" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg transition duration-300">
+                        Ver mi CV
+                        <svg class="w-5 h-5 inline ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Weeks Section -->
+    <section id="semanas" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Mis Semanas de Trabajo</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Week 1 -->
+                <div class="week-card bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 border border-gray-100">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-indigo-600 mb-2">Semana 1</h3>
+                        <p class="text-gray-700 mb-4">Introducción a HTML y CSS.</p>
+                        <ul class="text-gray-600 space-y-2 mb-4">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Fundamentos de HTML
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Estructura semántica
+                            </li>
+                        </ul>
+                        <a href="semana1.html" class="inline-block text-indigo-600 hover:text-indigo-800 font-medium">Ver detalles →</a>
+                    </div>
+                </div>
+
+                <!-- Week 2 -->
+                <div class="week-card bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 border border-gray-100">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-indigo-600 mb-2">Semana 2</h3>
+                        <p class="text-gray-700 mb-4">CSS Avanzado y Flexbox.</p>
+                        <ul class="text-gray-600 space-y-2 mb-4">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Diseño responsivo
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Flexbox y Grid
+                            </li>
+                        </ul>
+                        <a href="semana2.html" class="inline-block text-indigo-600 hover:text-indigo-800 font-medium">Ver detalles →</a>
+                    </div>
+                </div>
+
+                <!-- Week Placeholder -->
+                <div class="week-card bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 border border-gray-100">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-indigo-600 mb-2">Semana 3</h3>
+                        <p class="text-gray-700 mb-4">Introducción a JavaScript.</p>
+                        <ul class="text-gray-600 space-y-2 mb-4">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Sintaxis básica
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Manipulación del DOM
+                            </li>
+                        </ul>
+                        <a href="semana3.html" class="inline-block text-indigo-600 hover:text-indigo-800 font-medium">Ver detalles →</a>
+                    </div>
+                </div>
+
+                <!-- Week 4 -->
+                <div class="week-card bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 border border-gray-100">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-indigo-600 mb-2">Semana 4</h3>
+                        <p class="text-gray-700 mb-4">Exposiciones de HTML, CSS, Bootstrap y Tailwind CSS.</p>
+                        <ul class="text-gray-600 space-y-2 mb-4">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                HTML básico y avanzado
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                CSS básico y avanzado
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Introducción a Bootstrap
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Introducción a Tailwind CSS
+                            </li>
+                        </ul>
+                        <a href="semana4.html" class="inline-block text-indigo-600 hover:text-indigo-800 font-medium">Ver detalles →</a>
+                    </div>
+                </div>
+
+
+                <!-- Week 5 -->
+                <div class="week-card bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 border border-gray-100">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-indigo-600 mb-2">Semana 5</h3>
+                        <p class="text-gray-700 mb-4">Exposición sobre JavaScript Básico.</p>
+                        <ul class="text-gray-600 space-y-2 mb-4">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Variables y tipos de datos
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Operadores y estructuras condicionales
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Ciclos y funciones
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Manipulación básica del DOM
+                            </li>
+                        </ul>
+                        <a href="semana5.html" class="inline-block text-indigo-600 hover:text-indigo-800 font-medium">Ver detalles →</a>
+                    </div>
+                </div>
+
+
+                <!-- Week 6 -->
+                <div class="week-card bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 border border-gray-100">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-indigo-600 mb-2">Semana 6</h3>
+                        <p class="text-gray-700 mb-4">Introducción a React JS.</p>
+                        <ul class="text-gray-600 space-y-2 mb-4">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                ¿Qué es React y para qué se usa?
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Componentes reutilizables
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Virtual DOM y rendimiento
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                SPA: Single Page Application
+                            </li>
+                        </ul>
+                        <a href="semana6.html" class="inline-block text-indigo-600 hover:text-indigo-800 font-medium">Ver detalles →</a>
+                    </div>
+                </div>
+
+
+                <!-- Week 7 -->
+                <div class="week-card bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 border border-gray-100">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-indigo-600 mb-2">Semana 7</h3>
+                        <p class="text-gray-700 mb-4">Uso de Hooks en React JS.</p>
+                        <ul class="text-gray-600 space-y-2 mb-4">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Introducción a los Hooks
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                useState para manejar estado
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                useEffect para efectos secundarios
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                useContext para compartir datos
+                            </li>
+                        </ul>
+                        <a href="semana7.html" class="inline-block text-indigo-600 hover:text-indigo-800 font-medium">Ver detalles →</a>
+                    </div>
+                </div>
+
+
+                <div class="week-card bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 border border-gray-100">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-indigo-600 mb-2">Semana 8</h3>
+                        <p class="text-gray-700 mb-4">Vite y Evaluación del Primer Parcial.</p>
+                        <ul class="text-gray-600 space-y-2 mb-4">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Introducción al entorno Vite
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Proyecto práctico en React con Vite
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Examen parcial: preguntas  prácticas
+                            </li>
+                        </ul>
+                        <a href="semana8.html" class="inline-block text-indigo-600 hover:text-indigo-800 font-medium">Ver detalles →</a>
+                    </div>
+                </div>
+
+
+
+                <div class="week-card bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 border border-gray-100">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-indigo-600 mb-2">Semana 9</h3>
+                    <p class="text-gray-700 mb-4">Java Web con Apache Tomcat, Maven, JSP y Spring.</p>
+                    <ul class="text-gray-600 space-y-2 mb-4">
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        Apache Tomcat y estructura de directorios
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        Archivo server.xml y configuración de puertos
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        Gestores de dependencias: Maven y Gradle
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        Archivo <code>pom.xml</code> y ciclo de vida en Maven
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        Jakarta JSP: sintaxis, expresiones, directivas y acciones
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        Patrón MVC aplicado a JSP y Servlets
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        Spring Framework: IoC, Beans, DI y Spring Container
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        Spring Boot y estructura de proyectos modernos
+                    </li>
+                    </ul>
+                    <a href="semana9.html" class="inline-block text-indigo-600 hover:text-indigo-800 font-medium">Ver detalles →</a>
+                </div>
+                </div>
+
+
+                <div class="week-card bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 border border-gray-100">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-indigo-600 mb-2">Semana 10</h3>
+                    <p class="text-gray-700 mb-4">JSP, Spring Boot y desarrollo de API RESTful con Jakarta y MySQL.</p>
+                    <ul class="text-gray-600 space-y-2 mb-4">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Instalación de JDK Jakarta, IntelliJ IDEA y Tomcat
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Creación de aplicaciones JSP dinámicas
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Formularios JSP con métodos GET y POST
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Configuración de Spring Boot en IntelliJ IDEA
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Conexión de Spring Boot con MySQL y archivo <code>application.properties</code>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Arquitectura MVC en Spring: Controller, Model, Repository, Service
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Desarrollo de API RESTful para la entidad <code>Estudiante</code>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Pruebas de endpoints CRUD con Postman
+                        </li>
+                    </ul>
+                    <a href="semana10.html" class="inline-block text-indigo-600 hover:text-indigo-800 font-medium">Ver detalles →</a>
+                </div>
+            </div>
+
+
+            <!-- Week 11 -->
+            <div class="week-card bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 border border-gray-100">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-indigo-600 mb-2">Semana 11</h3>
+                    <p class="text-gray-700 mb-4">Autenticación Basada en Tokens</p>
+                    <ul class="text-gray-600 space-y-2 mb-4">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            JWT (JSON Web Tokens)
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Flujo de autenticación
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Seguridad de tokens
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Implementación en APIs
+                        </li>
+                    </ul>
+                    <a href="semana11.html" class="inline-block text-indigo-600 hover:text-indigo-800 font-medium">Ver detalles →</a>
+                </div>
+            </div>
+
+
+            <!-- Week 12 -->
+            <div class="week-card bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 border border-gray-100">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-indigo-600 mb-2">Semana 12</h3>
+                    <p class="text-gray-700 mb-4">Práctica Calificada: API REST para Gestión de Docentes</p>
+                    <ul class="text-gray-600 space-y-2 mb-4">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            CRUD completo para entidad Docente
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Endpoints especializados (filtros, paginación)
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Validaciones y manejo de excepciones
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Documentación Swagger
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Pruebas con Postman
+                        </li>
+                    </ul>
+                    <a href="semana12.html" class="inline-block text-indigo-600 hover:text-indigo-800 font-medium">Ver detalles →</a>
+                </div>
+            </div>
+
+
+            <!-- Week 13 -->
+            <div class="week-card bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 border border-gray-100">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-indigo-600 mb-2">Semana 13</h3>
+                    <p class="text-gray-700 mb-4">Servidores Web, PHP y Laravel</p>
+                    <ul class="text-gray-600 space-y-2 mb-4">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Apache HTTP Server
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Fundamentos de PHP
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Introducción a Laravel
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Configuración de entornos
+                        </li>
+                    </ul>
+                    <a href="semana13.html" class="inline-block text-indigo-600 hover:text-indigo-800 font-medium">Ver detalles →</a>
+                </div>
+            </div>
+
+            <!-- Week 14 -->
+            <div class="week-card bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 border border-gray-100">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-indigo-600 mb-2">Semana 14</h3>
+                    <p class="text-gray-700 mb-4">Servidores Web, Python y Flask</p>
+                    <ul class="text-gray-600 space-y-2 mb-4">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Apache con mod_wsgi
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Fundamentos de Python
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Microframework Flask
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Motor de plantillas Jinja2
+                        </li>
+                    </ul>
+                    <a href="semana14.html" class="inline-block text-indigo-600 hover:text-indigo-800 font-medium">Ver detalles →</a>
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Contacto</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-8">¿Quieres saber más sobre mi progreso o colaborar en algún proyecto?</p>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
+                <a href="mailto:tucorreo@ejemplo.com" class="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition duration-300">Envíame un correo</a>
+                <a href="#" class="px-6 py-3 border border-indigo-600 text-indigo-600 rounded-lg hover:bg-indigo-50 transition duration-300">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-gray-900 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2025 Mi Portafolio - Curso de Desarrollo Web. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+

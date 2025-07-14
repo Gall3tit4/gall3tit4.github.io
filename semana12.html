@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Semana 12 - Mi Portafolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+    }
+    .hero-pattern {
+      background-color: #e0e7ff;
+      background-image:
+        radial-gradient(at 40% 20%, hsla(224,76%,70%,0.3) 0px, transparent 50%),
+        radial-gradient(at 80% 0%, hsla(226,76%,70%,0.3) 0px, transparent 50%),
+        radial-gradient(at 0% 50%, hsla(221,76%,70%,0.3) 0px, transparent 50%);
+    }
+    .endpoint-card {
+      background: linear-gradient(135deg, #f0f4ff 0%, #e0e7ff 100%);
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+
+  <!-- Encabezado -->
+  <header class="hero-pattern">
+    <div class="container mx-auto px-6 py-10">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-1/2 bg-white bg-opacity-80 p-6 rounded-xl shadow-md border-l-4 border-indigo-600">
+          <h1 class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 mb-2">
+            Semana 12
+          </h1>
+          <h2 class="text-2xl md:text-3xl text-indigo-700 font-semibold mb-4">
+            Práctica Calificada: API para Gestión de Docentes
+          </h2>
+          <p class="text-gray-700 text-lg mb-4 flex items-start gap-2">
+            <svg class="w-6 h-6 text-indigo-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 2a8 8 0 018 8v3a2 2 0 01-2 2h-1.586l-2 2H7a2 2 0 01-2-2V10a8 8 0 018-8z" clip-rule="evenodd" />
+            </svg>
+            Implementé una API RESTful completa para la gestión de docentes con Spring Boot, Jakarta EE y MySQL, incluyendo operaciones CRUD, endpoints especializados, validaciones, paginación y documentación Swagger.
+          </p>
+        </div>
+        <div class="md:w-1/2 mt-10 md:mt-0">
+          <img src="https://www.tutorialspoint.com/rest_api/images/rest_api_mini.jpg" alt="API REST" class="rounded-lg shadow-xl max-w-md w-full h-auto mx-auto" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Detalles del Proyecto</h2>
+
+      <p class="text-gray-700 mb-8 leading-relaxed max-w-3xl mx-auto text-center">
+        La aplicación permite gestionar docentes con todas las operaciones CRUD, endpoints especializados para filtrado y análisis de datos, validaciones avanzadas y documentación interactiva con Swagger UI.
+      </p>
+
+      <div class="max-w-4xl mx-auto space-y-12">
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">1. Entidad Docente</h3>
+          <div class="bg-gray-50 p-6 rounded-lg mb-4">
+            <pre class="bg-white p-4 rounded-lg overflow-x-auto text-sm">
+@Entity
+@Table(name = "docentes")
+public class Docente {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idDocente;
+    
+    private String nomDocente;
+    private String dirDocente;
+    private String ciuDocente;
+    
+    @Column(unique = true)
+    private String emailDocente;
+    
+    private LocalDate fecNacimiento;
+    private Integer tiempoServicio;
+    
+    // Getters y Setters
+}</pre>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">2. Endpoints Implementados</h3>
+          
+          <div class="grid md:grid-cols-2 gap-4">
+            <!-- CRUD Básico -->
+            <div class="endpoint-card p-4 rounded-lg">
+              <h4 class="font-semibold text-indigo-700 mb-2">CRUD Básico</h4>
+              <ul class="space-y-2">
+                <li><strong>GET /api/docentes</strong> - Listar todos</li>
+                <li><strong>GET /api/docentes/{id}</strong> - Buscar por ID</li>
+                <li><strong>POST /api/docentes</strong> - Crear nuevo</li>
+                <li><strong>PUT /api/docentes/{id}</strong> - Actualizar</li>
+                <li><strong>DELETE /api/docentes/{id}</strong> - Eliminar</li>
+              </ul>
+            </div>
+            
+            <!-- Endpoints Especiales -->
+            <div class="endpoint-card p-4 rounded-lg">
+              <h4 class="font-semibold text-indigo-700 mb-2">Endpoints Especiales</h4>
+              <ul class="space-y-2">
+                <li><strong>GET /api/docentes/ciudad/{ciudad}</strong> - Filtrar por ciudad</li>
+                <li><strong>GET /api/docentes/experiencia/{años}</strong> - Docentes con X+ años de servicio</li>
+                <li><strong>GET /api/docentes/edad-promedio</strong> - Edad promedio</li>
+                <li><strong>GET /api/docentes?page=0&size=10</strong> - Paginación</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">3. Validaciones Implementadas</h3>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="bg-green-50 p-4 rounded-lg">
+              <h4 class="font-semibold text-green-700 mb-2">Email</h4>
+              <p class="text-gray-700">Formato de correo válido</p>
+              <pre class="bg-white mt-2 p-2 rounded text-sm">@Email
+private String emailDocente;</pre>
+            </div>
+            <div class="bg-blue-50 p-4 rounded-lg">
+              <h4 class="font-semibold text-blue-700 mb-2">Tiempo Servicio</h4>
+              <p class="text-gray-700">No puede ser negativo</p>
+              <pre class="bg-white mt-2 p-2 rounded text-sm">@Min(0)
+private Integer tiempoServicio;</pre>
+            </div>
+            <div class="bg-purple-50 p-4 rounded-lg">
+              <h4 class="font-semibold text-purple-700 mb-2">Fecha Nacimiento</h4>
+              <p class="text-gray-700">Debe ser pasada</p>
+              <pre class="bg-white mt-2 p-2 rounded text-sm">@Past
+private LocalDate fecNacimiento;</pre>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">4. Manejo de Excepciones Globales</h3>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <pre class="bg-white p-4 rounded-lg overflow-x-auto text-sm">
+@ControllerAdvice
+public class GlobalExceptionHandler {
+    
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<Map<String, String>> handleValidationExceptions(
+            MethodArgumentNotValidException ex) {
+        
+        Map<String, String> errors = new HashMap<>();
+        ex.getBindingResult().getAllErrors().forEach(error -> {
+            String fieldName = ((FieldError) error).getField();
+            String errorMessage = error.getDefaultMessage();
+            errors.put(fieldName, errorMessage);
+        });
+        
+        return ResponseEntity.badRequest().body(errors);
+    }
+    
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<String> handleResourceNotFound(ResourceNotFoundException ex) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+    }
+}</pre>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">5. Documentación Swagger</h3>
+          <div class="flex flex-col md:flex-row gap-6">
+            <div class="md:w-1/2">
+              <p class="text-gray-700 mb-4">Configuración básica para documentar la API:</p>
+              <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">
+@Configuration
+public class SwaggerConfig {
+    
+    @Bean
+    public OpenAPI customOpenAPI() {
+        return new OpenAPI()
+                .info(new Info()
+                        .title("API de Gestión de Docentes")
+                        .version("1.0")
+                        .description("Documentación para la API de Docentes"));
+    }
+}</pre>
+            </div>
+            <div class="md:w-1/2">
+              <img src="https://www.baeldung.com/wp-content/uploads/2022/01/swagger-ui.png" alt="Swagger UI" class="rounded-lg shadow-lg w-full">
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">6. Paginación con Spring Data</h3>
+          <div class="bg-blue-50 p-6 rounded-lg">
+            <pre class="bg-white p-4 rounded-lg overflow-x-auto text-sm">
+@GetMapping
+public ResponseEntity<Page<Docente>> listarDocentes(
+        @RequestParam(defaultValue = "0") int page,
+        @RequestParam(defaultValue = "10") int size) {
+    
+    Pageable pageable = PageRequest.of(page, size);
+    Page<Docente> docentes = docenteRepository.findAll(pageable);
+    
+    return ResponseEntity.ok(docentes);
+}</pre>
+          </div>
+          <p class="text-gray-700 mt-2">Ejemplo de respuesta paginada:</p>
+          <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">
+{
+  "content": [...],
+  "pageable": { ... },
+  "totalPages": 5,
+  "totalElements": 42,
+  "last": false,
+  "size": 10,
+  "number": 0,
+  "sort": { ... },
+  "first": true,
+  "numberOfElements": 10
+}</pre>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">7. Pruebas con Postman</h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-semibold text-gray-800 mb-2">Colección de Pruebas</h4>
+              <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <li>Creación de docente (POST)</li>
+                <li>Listado paginado (GET con parámetros)</li>
+                <li>Filtrado por ciudad</li>
+                <li>Cálculo de edad promedio</li>
+                <li>Validación de errores</li>
+              </ul>
+            </div>
+            <div>
+              <img src="https://assets.postman.com/postman-docs/v10/api-testing-with-postman.jpg" alt="Pruebas Postman" class="rounded-lg shadow-lg w-full">
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">¿Qué Aprendí?</h3>
+          <p class="text-gray-700">
+            Consolidé mis conocimientos en el desarrollo de APIs RESTful con Spring Boot, implementando características avanzadas como paginación, filtrado especializado y documentación automática. Aprendí a manejar validaciones complejas y excepciones globales para construir una API robusta y profesional.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">¿Cómo Aprendí?</h3>
+          <p class="text-gray-700">
+            A través del desarrollo práctico de la API completa, enfrentando desafíos reales como la implementación de consultas personalizadas en el repositorio y la configuración de Swagger. Las pruebas exhaustivas con Postman me ayudaron a validar cada funcionalidad y asegurar la calidad del producto final.
+          </p>
+        </div>
+
+        <!-- Botón regreso -->
+        <div class="text-center mt-12">
+          <a href="index.html" class="inline-block px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition duration-300">
+            ← Volver al Inicio
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 bg-gray-900 text-white">
+    <div class="container mx-auto px-6 text-center">
+      <p>© 2025 Mi Portafolio - Curso de Desarrollo Web. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>

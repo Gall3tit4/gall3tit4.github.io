@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Semana 10 - Mi Portafolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+    }
+    .hero-pattern {
+      background-color: #e0e7ff;
+      background-image:
+        radial-gradient(at 40% 20%, hsla(224,76%,70%,0.3) 0px, transparent 50%),
+        radial-gradient(at 80% 0%, hsla(226,76%,70%,0.3) 0px, transparent 50%),
+        radial-gradient(at 0% 50%, hsla(221,76%,70%,0.3) 0px, transparent 50%);
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+
+  <!-- Encabezado -->
+  <header class="hero-pattern">
+    <div class="container mx-auto px-6 py-10">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-1/2 bg-white bg-opacity-80 p-6 rounded-xl shadow-md border-l-4 border-indigo-600">
+          <h1 class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 mb-2">
+            Semana 10
+          </h1>
+          <h2 class="text-2xl md:text-3xl text-indigo-700 font-semibold mb-4">
+            Aplicaciones Web con Spring Boot, Tomcat y Arquitectura en Capas
+          </h2>
+          <p class="text-gray-700 text-lg mb-4 flex items-start gap-2">
+            <svg class="w-6 h-6 text-indigo-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 2a8 8 0 018 8v3a2 2 0 01-2 2h-1.586l-2 2H7a2 2 0 01-2-2V10a8 8 0 018-8z" clip-rule="evenodd" />
+            </svg>
+            Esta semana construimos una API RESTful completa con Spring Boot, desplegada en Tomcat, conectada a MySQL, utilizando JSP para la vista, probada con Postman, y aplicando la arquitectura en capas con Maven como gestor de dependencias.
+          </p>
+        </div>
+        <div class="md:w-1/2 mt-10 md:mt-0">
+          <img src="https://miro.medium.com/v2/resize:fit:1200/format:webp/1*qnSpmrmboMXs-RApbySwFg.png" alt="Spring Boot App" class="rounded-lg shadow-xl max-w-md w-full h-auto mx-auto" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Resumen de la Semana</h2>
+
+      <p class="text-gray-700 mb-8 leading-relaxed max-w-3xl mx-auto text-center">
+        El enfoque principal fue desarrollar una aplicación web moderna con Spring Boot desplegada en Apache Tomcat, siguiendo el patrón de arquitectura en capas: controlador, servicio y repositorio. Usamos JSP como motor de vistas, Maven para gestión de dependencias, `application.properties` para configurar la conexión con MySQL, y realizamos pruebas con Postman para validar los endpoints REST.
+      </p>
+
+      <div class="max-w-4xl mx-auto space-y-12">
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">1. Arquitectura en Capas</h3>
+          <p class="text-gray-700 mb-4">
+            Se dividió la aplicación en 3 capas principales:
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-gray-700">
+            <li><strong>Controlador (Controller):</strong> Gestiona las solicitudes HTTP. Utiliza anotaciones como <code>@RestController</code>, <code>@GetMapping</code>, <code>@PostMapping</code>, etc.</li>
+            <li><strong>Servicio (Service):</strong> Contiene la lógica de negocio. Se inyecta con <code>@Autowired</code> al controlador.</li>
+            <li><strong>Repositorio (Repository):</strong> Accede a la base de datos usando interfaces como <code>CrudRepository</code> o <code>JpaRepository</code>.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">2. Apache Tomcat</h3>
+          <p class="text-gray-700 mb-4">Apache Tomcat es un contenedor de servlets desarrollado bajo el proyecto Jakarta en la Apache Software Foundation que implementa las especificaciones de servlets y JSP.</p>
+          
+          <h4 class="font-semibold text-gray-800 mb-2">Estructura de Directorios:</h4>
+          <ul class="list-disc list-inside space-y-2 mb-4">
+            <li><strong>bin:</strong> Ejecutables y scripts para arrancar y parar Tomcat</li>
+            <li><strong>conf:</strong> Ficheros de configuración (server.xml, web.xml)</li>
+            <li><strong>webapps:</strong> Directorio donde se despliegan las aplicaciones web</li>
+            <li><strong>logs:</strong> Archivos de registro de la ejecución</li>
+          </ul>
+          
+          <h4 class="font-semibold text-gray-800 mb-2">Configuración server.xml:</h4>
+          <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">
+&lt;Server port="8005" shutdown="SHUTDOWN"&gt;
+  &lt;Service name="Catalina"&gt;
+    &lt;Connector port="8080" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8443" /&gt;
+    &lt;Engine name="Catalina" defaultHost="localhost"&gt;
+      &lt;Host name="localhost" appBase="webapps"
+            unpackWARs="true" autoDeploy="true"&gt;
+      &lt;/Host&gt;
+    &lt;/Engine&gt;
+  &lt;/Service&gt;
+&lt;/Server&gt;</pre>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">3. Maven como Gestor de Dependencias</h3>
+          <p class="text-gray-700 mb-4">Maven es una herramienta de software libre para gestionar proyectos Java que permite:</p>
+          <ul class="list-disc list-inside space-y-2 mb-4">
+            <li>Gestionar dependencias del proyecto automáticamente</li>
+            <li>Compilar el código fuente de manera automática</li>
+            <li>Empaquetar la aplicación en archivos .jar o .war</li>
+            <li>Generar documentación del proyecto</li>
+          </ul>
+          
+          <h4 class="font-semibold text-gray-800 mb-2">Estructura básica de pom.xml:</h4>
+          <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">
+&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+  
+  &lt;groupId&gt;com.miempresa&lt;/groupId&gt;
+  &lt;artifactId&gt;mi-aplicacion&lt;/artifactId&gt;
+  &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+  
+  &lt;properties&gt;
+    &lt;maven.compiler.source&gt;17&lt;/maven.compiler.source&gt;
+    &lt;maven.compiler.target&gt;17&lt;/maven.compiler.target&gt;
+  &lt;/properties&gt;
+  
+  &lt;dependencies&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+      &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+      &lt;version&gt;3.1.0&lt;/version&gt;
+    &lt;/dependency&gt;
+  &lt;/dependencies&gt;
+&lt;/project&gt;</pre>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">4. JavaServer Pages (JSP)</h3>
+          <p class="text-gray-700 mb-4">JSP es una tecnología para crear páginas web dinámicas que permite:</p>
+          <ul class="list-disc list-inside space-y-2 mb-4">
+            <li>Mezclar HTML con código Java mediante scriptlets</li>
+            <li>Acceder a objetos implícitos como request, response y session</li>
+            <li>Reutilizar componentes mediante etiquetas personalizadas</li>
+          </ul>
+          
+          <h4 class="font-semibold text-gray-800 mb-2">Elementos básicos de JSP:</h4>
+          <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">
+&lt;%-- Directiva de página --%&gt;
+&lt;%@ page contentType="text/html;charset=UTF-8" language="java" %&gt;
+
+&lt;%-- Declaración --%&gt;
+&lt;%! int contador = 0; %&gt;
+
+&lt;%-- Scriptlet --%&gt;
+&lt;% 
+  String nombre = request.getParameter("nombre");
+  contador++;
+%&gt;
+
+&lt;%-- Expresión --%&gt;
+&lt;p&gt;Hola &lt;%= nombre %&gt;, eres el visitante #&lt;%= contador %&gt;&lt;/p&gt;</pre>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">5. Configuración del Proyecto Spring Boot</h3>
+          <p class="text-gray-700 mb-4">Se añadieron las siguientes dependencias en <code>pom.xml</code>:</p>
+          <ul class="list-disc list-inside mb-4">
+            <li>spring-boot-starter-web</li>
+            <li>spring-boot-starter-data-jpa</li>
+            <li>mysql-connector-java</li>
+            <li>spring-boot-starter-tomcat (para despliegue embebido)</li>
+            <li>javax.servlet-api (para JSP)</li>
+          </ul>
+          <p>Configuración en <code>application.properties</code>:</p>
+          <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">
+# Configuración de MySQL
+spring.datasource.url=jdbc:mysql://localhost:3306/mi_base
+spring.datasource.username=root
+spring.datasource.password=123456
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+# Configuración de Tomcat
+server.port=8080
+server.servlet.context-path=/mi-app
+
+# Configuración de vistas JSP
+spring.mvc.view.prefix=/WEB-INF/views/
+spring.mvc.view.suffix=.jsp</pre>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">6. Endpoints REST y pruebas en Postman</h3>
+          <p>Se desarrollaron endpoints para una entidad "Estudiante". Ejemplos:</p>
+          <ul class="list-disc list-inside space-y-2 mb-4">
+            <li><code>GET /api/estudiantes</code> → Lista todos los estudiantes</li>
+            <li><code>POST /api/estudiantes</code> → Crea un nuevo estudiante</li>
+            <li><code>PUT /api/estudiantes/{id}</code> → Actualiza por ID</li>
+            <li><code>DELETE /api/estudiantes/{id}</code> → Elimina por ID</li>
+          </ul>
+          <p>Todos los endpoints fueron probados usando Postman para validar las respuestas en formato JSON.</p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">7. Flujo completo de una petición</h3>
+          <p>
+            Al realizar una solicitud desde el navegador (por ejemplo, <code>/api/estudiantes</code>), esta sigue el siguiente flujo:
+          </p>
+          <ol class="list-decimal list-inside space-y-1 mt-2 mb-4">
+            <li>El navegador envía una solicitud GET al servidor Tomcat en el puerto 8080</li>
+            <li>Tomcat pasa la solicitud al DispatcherServlet de Spring</li>
+            <li>El <code>EstudianteController</code> recibe la solicitud y llama al servicio</li>
+            <li>El <code>EstudianteService</code> ejecuta la lógica de negocio y consulta al repositorio</li>
+            <li>El <code>EstudianteRepository</code> accede a la base de datos mediante JPA</li>
+            <li>La respuesta viaja de vuelta a través de las capas y Tomcat devuelve el JSON al cliente</li>
+          </ol>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">8. Imágenes del Proyecto</h3>
+          <div class="space-y-6">
+            <img src="https://springframework.guru/wp-content/uploads/2015/12/spring-boot-maven-project-structure.png" alt="Estructura Spring" class="rounded-lg shadow-lg w-full">
+            <img src="https://i.ytimg.com/vi/nU5_bGhdD9M/maxresdefault.jpg" alt="Postman pruebas" class="rounded-lg shadow-lg w-full">
+            <img src="https://www.digitalocean.com/community/tutorials/wp-content/uploads/2022/08/tomcat-directory-structure.png" alt="Estructura Tomcat" class="rounded-lg shadow-lg w-full">
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">¿Qué Aprendí?</h3>
+          <p class="text-gray-700">
+            Comprendí cómo se construye una API REST completa con Spring Boot desplegada en Tomcat, utilizando Maven para gestión de dependencias y JSP para las vistas. Aprendí a configurar la conexión a MySQL, organizar el proyecto en capas (controller-service-repository), y probar los endpoints con Postman. También entendí el rol de Tomcat como contenedor de servlets y cómo Spring Boot simplifica el despliegue con un Tomcat embebido.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-indigo-600 mb-2">¿Cómo Aprendí?</h3>
+          <p class="text-gray-700">
+            Aprendí mediante la creación práctica de clases Java, configuración de archivos XML y properties, pruebas en Postman, y observación del flujo de peticiones desde el navegador hasta la base de datos. La combinación de teoría (documentación de Spring y Tomcat) con práctica (implementación real del proyecto) me permitió comprender profundamente cada componente.
+          </p>
+        </div>
+
+        <!-- Botón regreso -->
+        <div class="text-center mt-12">
+          <a href="index.html" class="inline-block px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition duration-300">
+            ← Volver al Inicio
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 bg-gray-900 text-white">
+    <div class="container mx-auto px-6 text-center">
+      <p>© 2025 Mi Portafolio - Curso de Desarrollo Web. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>
