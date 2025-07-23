@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Semana 15 - Mi Portafolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        .week-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-pattern {
+            background-color: #e0e7ff;
+            background-image:
+                radial-gradient(at 40% 20%, hsla(224,76%,70%,0.3) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, hsla(226,76%,70%,0.3) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, hsla(221,76%,70%,0.3) 0px, transparent 50%);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Header -->
+    <header class="hero-pattern">
+        <div class="container mx-auto px-6 py-10">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 bg-white bg-opacity-80 p-6 rounded-xl shadow-md border-l-4 border-indigo-600">
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 mb-2">
+                        Semana 15
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl text-indigo-700 font-semibold mb-4">
+                        Desarrollo Web de Sistemas Inteligentes
+                    </h2>
+                    <p class="text-gray-700 text-lg mb-4 flex items-start gap-2">
+                        <svg class="w-6 h-6 text-indigo-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 2a8 8 0 018 8v3a2 2 0 01-2 2h-1.586l-2 2H7a2 2 0 01-2-2V10a8 8 0 018-8z" clip-rule="evenodd" />
+                        </svg>
+                        Implementación de sistemas inteligentes con Python, Flask y Django, integrando modelos de IA en aplicaciones web.
+                    </p>
+                </div>
+
+                <div class="md:w-1/2 mt-10 md:mt-0">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzVKdcxv0SU2Q0wwle3zWAcRuFyYE97FgLfQ&s" alt="Sistemas Inteligentes" class="rounded-lg shadow-xl max-w-md w-full h-auto mx-auto" />
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Resumen de la Semana</h2>
+            <p class="text-gray-700 mb-8 leading-relaxed max-w-xl mx-auto text-center">
+                Esta semana exploramos el desarrollo de sistemas inteligentes capaces de percibir su entorno, procesar información, razonar y ejecutar acciones de forma autónoma, integrando estas capacidades en aplicaciones web modernas.
+            </p>
+
+            <div class="max-w-3xl mx-auto">
+                <!-- Sección ampliada de Arquitectura -->
+                <h3 class="text-xl font-bold text-indigo-600 mb-4">Arquitectura de Sistemas Inteligentes</h3>
+                
+                <div class="bg-indigo-50 p-6 rounded-xl mb-6 border border-indigo-100">
+                    <h4 class="text-lg font-semibold text-indigo-700 mb-3">Diagrama de Componentes</h4>
+                    <div class="flex justify-center mb-4">
+                        <img src="https://fastercapital.com/es/i-es/Arquitectura-NIF--construccion-de-sistemas-inteligentes--Mejora-de-la-inteligencia-del-sistema-con-arquitectura-NIF.webp" 
+                             alt="Arquitectura de Sistemas Inteligentes" 
+                             class="rounded-lg shadow-lg max-w-full h-auto border border-gray-200">
+                    </div>
+                    <p class="text-gray-700 mb-3">
+                        Los sistemas inteligentes modernos siguen una arquitectura modular que permite la integración de capacidades cognitivas avanzadas:
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <!-- Módulo de Percepción -->
+                    <div class="bg-white p-5 rounded-lg shadow-md border-t-4 border-blue-500">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-2 flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                            Módulo de Percepción
+                        </h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm">
+                            <li>Interfaces con sensores físicos (IoT, cámaras)</li>
+                            <li>Receptores de datos digitales (APIs, streams)</li>
+                            <li>Preprocesamiento y normalización de datos</li>
+                            <li>Conversión a representaciones internas</li>
+                            <li>Técnicas avanzadas: Computer Vision, NLP</li>
+                        </ul>
+                        <div class="mt-3 p-2 bg-blue-50 rounded text-xs text-blue-700">
+                            Ejemplo: Drones con sensores multiespectrales para agricultura de precisión
+                        </div>
+                    </div>
+
+                    <!-- Módulo de Conocimiento -->
+                    <div class="bg-white p-5 rounded-lg shadow-md border-t-4 border-purple-500">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-2 flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                            </svg>
+                            Módulo de Conocimiento
+                        </h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm">
+                            <li>Bases de conocimiento estructuradas</li>
+                            <li>Ontologías y grafos semánticos</li>
+                            <li>Modelos de representación del dominio</li>
+                            <li>Bases de datos vectoriales para embeddings</li>
+                            <li>Memoria a corto y largo plazo</li>
+                        </ul>
+                        <div class="mt-3 p-2 bg-purple-50 rounded text-xs text-purple-700">
+                            Ejemplo: Grafo de conocimiento médico con relaciones entre síntomas, enfermedades y tratamientos
+                        </div>
+                    </div>
+
+                    <!-- Módulo de Razonamiento -->
+                    <div class="bg-white p-5 rounded-lg shadow-md border-t-4 border-green-500">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-2 flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                            </svg>
+                            Módulo de Razonamiento
+                        </h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm">
+                            <li>Motores de reglas (Rule Engines)</li>
+                            <li>Redes bayesianas para incertidumbre</li>
+                            <li>Lógica difusa para variables cualitativas</li>
+                            <li>Algoritmos de planificación (A*, STRIPS)</li>
+                            <li>Sistemas expertos basados en conocimiento</li>
+                        </ul>
+                        <div class="mt-3 p-2 bg-green-50 rounded text-xs text-green-700">
+                            Ejemplo: Sistema de diagnóstico médico que combina reglas clínicas con probabilidades bayesianas
+                        </div>
+                    </div>
+
+                    <!-- Módulo de Aprendizaje -->
+                    <div class="bg-white p-5 rounded-lg shadow-md border-t-4 border-yellow-500">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-2 flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                            Módulo de Aprendizaje
+                        </h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm">
+                            <li>Redes neuronales (CNN, RNN, Transformers)</li>
+                            <li>Algoritmos de aprendizaje supervisado y no supervisado</li>
+                            <li>Refuerzo aprendizaje (Reinforcement Learning)</li>
+                            <li>Transfer learning y fine-tuning</li>
+                            <li>AutoML para automatización del proceso</li>
+                        </ul>
+                        <div class="mt-3 p-2 bg-yellow-50 rounded text-xs text-yellow-700">
+                            Ejemplo: Modelo de visión por computadora que mejora su precisión con nuevos datos de entrenamiento
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md mb-8 border border-gray-200">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-3">Flujo de Procesamiento</h4>
+                    <div class="flex justify-center mb-4">
+                        <img src="https://media.licdn.com/dms/image/v2/D4D22AQHdheO2ztcpQw/feedshare-shrink_800/feedshare-shrink_800/0/1708934262947?e=2147483647&v=beta&t=M0npOY225VLyALYQNWmR2Pugm4zaC_lmSR8eLJf7Vec" 
+                             alt="Flujo de procesamiento" 
+                             class="rounded-lg shadow-lg max-w-full h-auto border border-gray-200">
+                    </div>
+                    <ol class="list-decimal list-inside text-gray-700 space-y-2 pl-4">
+                        <li><strong>Adquisición:</strong> Los sensores capturan datos del entorno (imágenes, sonido, señales)</li>
+                        <li><strong>Preprocesamiento:</strong> Limpieza, normalización y transformación de los datos brutos</li>
+                        <li><strong>Representación:</strong> Conversión a formatos adecuados para análisis (vectores, grafos)</li>
+                        <li><strong>Análisis:</strong> Aplicación de modelos de ML y algoritmos de razonamiento</li>
+                        <li><strong>Decisión:</strong> Generación de conclusiones o planes de acción</li>
+                        <li><strong>Ejecución:</strong> Implementación de acciones a través de actuadores o interfaces</li>
+                        <li><strong>Retroalimentación:</strong> Aprendizaje a partir de los resultados obtenidos</li>
+                    </ol>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md mb-8 border border-gray-200">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-3">Patrones Arquitectónicos Comunes</h4>
+                    <div class="grid gap-4 md:grid-cols-2">
+                        <div class="border-l-4 border-cyan-500 pl-4">
+                            <h5 class="font-medium text-gray-700 mb-2">Arquitectura basada en agentes</h5>
+                            <p class="text-sm text-gray-600">Sistemas multi-agente donde cada componente especializado colabora para resolver problemas complejos mediante comunicación y negociación.</p>
+                        </div>
+                        <div class="border-l-4 border-pink-500 pl-4">
+                            <h5 class="font-medium text-gray-700 mb-2">Pipeline de procesamiento</h5>
+                            <p class="text-sm text-gray-600">Flujo secuencial de datos a través de módulos especializados (ej: visión → NLP → razonamiento).</p>
+                        </div>
+                        <div class="border-l-4 border-orange-500 pl-4">
+                            <h5 class="font-medium text-gray-700 mb-2">Arquitectura cognitiva</h5>
+                            <p class="text-sm text-gray-600">Modela procesos humanos como memoria, atención y aprendizaje (ej: SOAR, ACT-R).</p>
+                        </div>
+                        <div class="border-l-4 border-teal-500 pl-4">
+                            <h5 class="font-medium text-gray-700 mb-2">Sistema híbrido</h5>
+                            <p class="text-sm text-gray-600">Combina enfoques simbólicos (reglas) y subsimbólicos (redes neuronales) para mayor flexibilidad.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-bold text-indigo-600 mb-4">Ejercicios de Laboratorio - Resultados</h3>
+                <ol class="list-decimal list-inside mb-4 space-y-6">
+                    <li>
+                        <strong>Algoritmos de toma de decisiones IF-THEN:</strong> Implementamos un sistema de diagnóstico médico basado en reglas.
+                        <div class="bg-gray-100 p-4 rounded-lg mt-2">
+                            <pre class="text-sm text-gray-800"><code>def diagnosticar(sintomas):
+    if "fiebre" in sintomas and "tos" in sintomas:
+        return "Posible gripe"
+    elif "dolor cabeza" in sintomas and "mareos" in sintomas:
+        return "Posible migraña"
+    else:
+        return "Consulta médica recomendada"</code></pre>
+                        
+                        </div>
+                        <img src="img/diagnosticosalud.png" 
+                            alt="Sintomas" class="rounded-lg shadow-lg max-w-full h-auto" style="max-height: 670px;">
+                    </li>
+                    <li>
+                        <strong>Control difuso de climatización:</strong> Sistema inteligente que ajusta la potencia del aire acondicionado usando lógica difusa.
+                        <div class="flex justify-center mt-4">
+                            <img src="img/climatizacion.png" 
+                            alt="Control difuso" class="rounded-lg shadow-lg max-w-full h-auto" style="max-height: 670px;">
+                        </div>
+                    </li>
+                    <li>
+                        <strong>Interfaz web para LLM (Llama 3):</strong> Implementamos una aplicación Flask que interactúa con el modelo de lenguaje.
+                        <div class="flex flex-col md:flex-row gap-4 mt-4">
+                            <div class="">
+                                <img src="img/llama1.png" 
+                                alt="Llama" class="rounded-lg shadow-lg w-full h-auto">
+                                <br>
+                                <img src="img/llama2.png" 
+                                alt="llama" class="rounded-lg shadow-lg w-full h-auto">
+                                <br>
+                                <img src="img/llama3.png" 
+                                alt="llama" class="rounded-lg shadow-lg w-full h-auto">
+                                <br>
+                                <img src="img/llama4.png" 
+                                alt="llama" class="rounded-lg shadow-lg w-full h-auto">
+                            </div>
+                            <div class="">
+                                
+                            </div>
+                        </div>
+                    </li>
+                </ol>
+
+                <h3 class="text-xl font-bold text-indigo-600 mb-4">Ámbitos de Aplicación</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+                    <div class="bg-indigo-50 p-4 rounded-lg border border-indigo-100">
+                        <h4 class="font-semibold text-indigo-700">Salud</h4>
+                        <p class="text-sm">Diagnóstico médico asistido (ej. Watson Health)</p>
+                    </div>
+                    <div class="bg-indigo-50 p-4 rounded-lg border border-indigo-100">
+                        <h4 class="font-semibold text-indigo-700">Automoción</h4>
+                        <p class="text-sm">Vehículos autónomos y sistemas ADAS</p>
+                    </div>
+                    <div class="bg-indigo-50 p-4 rounded-lg border border-indigo-100">
+                        <h4 class="font-semibold text-indigo-700">Industria 4.0</h4>
+                        <p class="text-sm">Robots colaborativos y mantenimiento predictivo</p>
+                    </div>
+                    <div class="bg-indigo-50 p-4 rounded-lg border border-indigo-100">
+                        <h4 class="font-semibold text-indigo-700">Retail</h4>
+                        <p class="text-sm">Sistemas de recomendación y logística inteligente</p>
+                    </div>
+                    <div class="bg-indigo-50 p-4 rounded-lg border border-indigo-100">
+                        <h4 class="font-semibold text-indigo-700">Hogar</h4>
+                        <p class="text-sm">Asistentes virtuales y termostatos inteligentes</p>
+                    </div>
+                    <div class="bg-indigo-50 p-4 rounded-lg border border-indigo-100">
+                        <h4 class="font-semibold text-indigo-700">Ciudades</h4>
+                        <p class="text-sm">Semáforos adaptativos y videovigilancia inteligente</p>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-bold text-indigo-600 mb-4">¿Qué Aprendí?</h3>
+                <p class="text-gray-700 mb-6">
+                    Aprendí a diseñar arquitecturas para sistemas inteligentes, implementando módulos de percepción, razonamiento y acción. Dominé técnicas como redes neuronales, algoritmos de decisión basados en reglas y lógica difusa. Además, integré estos sistemas en aplicaciones web usando Flask y Django, incluyendo modelos avanzados como Llama 3. Comprendí cómo los diferentes componentes (percepción, conocimiento, razonamiento y aprendizaje) interactúan para crear sistemas autónomos capaces de resolver problemas complejos.
+                </p>
+
+                <h3 class="text-xl font-bold text-indigo-600 mb-4">¿Cómo Aprendí?</h3>
+                <p class="text-gray-700 mb-6">
+                    A través de ejercicios prácticos implementando sistemas reales: desde algoritmos de diagnóstico médico hasta controles difusos para climatización. Experimenté con la integración de LLMs en aplicaciones web, configurando entornos con transformers y diseñando interfaces de usuario interactivas. El aprendizaje fue hands-on, resolviendo problemas concretos de implementación mientras analizaba casos de estudio de sistemas inteligentes en diversos dominios.
+                </p>
+
+                <!-- Botón de regreso -->
+                <div class="text-center mt-12">
+                    <a href="index.html#semanas" class="inline-block px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition duration-300">
+                        ← Volver al Inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-gray-900 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2025 Portafolio (Capcha Carhuachin) - Curso de Desarrollo de Aplicaciones Web. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

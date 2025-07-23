@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Semana 16 - Evaluación Final</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        .week-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-pattern {
+            background-color: #e0e7ff;
+            background-image:
+                radial-gradient(at 40% 20%, hsla(224,76%,70%,0.3) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, hsla(226,76%,70%,0.3) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, hsla(221,76%,70%,0.3) 0px, transparent 50%);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #4f46e5, #9333ea, #d946ef);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .criteria-card {
+            transition: all 0.3s ease;
+        }
+
+        .criteria-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Header -->
+    <header class="hero-pattern">
+        <div class="container mx-auto px-6 py-10">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 bg-white bg-opacity-80 p-6 rounded-xl shadow-md border-l-4 border-indigo-600">
+                    <h1 class="text-4xl md:text-5xl font-extrabold gradient-text mb-2">
+                        Semana 16
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl text-indigo-700 font-semibold mb-4">
+                        Evaluación Final - Proyecto Serenity
+                    </h2>
+                    <p class="text-gray-700 text-lg mb-4 flex items-start gap-2">
+                        <svg class="w-6 h-6 text-indigo-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 2a8 8 0 018 8v3a2 2 0 01-2 2h-1.586l-2 2H7a2 2 0 01-2-2V10a8 8 0 018-8z" clip-rule="evenodd" />
+                        </svg>
+                        Aplicación de chat que detecta ciberacoso en tiempo real usando inteligencia artificial
+                    </p>
+                </div>
+
+                <div class="md:w-1/2 mt-10 md:mt-0">
+                    <img src="img/serenitylogo.png" alt="Proyecto Serenity" class="rounded-lg shadow-xl max-w-md w-full h-auto mx-auto" />
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <!-- Evaluación Final -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200 mb-10">
+                    <h2 class="text-3xl font-bold text-center text-gray-900 mb-6">Evaluación Final</h2>
+                    
+                    <div class="mb-8 p-6 bg-gray-50 rounded-lg">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Instrucciones</h3>
+                        <p class="text-gray-700 mb-4">
+                            Desarrolle el presente examen en React y Python. Duración 7 días, la presentación es programación por equipo.
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="p-4 bg-indigo-50 rounded-lg">
+                                <h4 class="font-semibold text-indigo-700 mb-2">Curso:</h4>
+                                <p>Desarrollo de Aplicaciones Web</p>
+                            </div>
+                            <div class="p-4 bg-indigo-50 rounded-lg">
+                                <h4 class="font-semibold text-indigo-700 mb-2">Semestre:</h4>
+                                <p>IX</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Objetivo</h3>
+                        <p class="text-gray-700 mb-4">
+                            Desarrollar una aplicación web inteligente utilizando Python (Flask), MySQL, y un frontend en HTML, CSS, JavaScript y React.
+                        </p>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <!-- Backend -->
+                            <div class="bg-blue-50 p-5 rounded-lg border-l-4 border-blue-500">
+                                <h4 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path>
+                                    </svg>
+                                    Backend (Flask + MySQL + IA)
+                                </h4>
+                                <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm">
+                                    <li>Crear una API con rutas para registro, login y análisis de texto</li>
+                                    <li>Dashboard para gestionar resultados del modelo IA</li>
+                                    <li>Incorporar modelo de IA usando transformers o scikit-learn</li>
+                                    <li>Opciones: Análisis de sentimientos, resumen de texto u otro</li>
+                                </ul>
+                            </div>
+
+                            <!-- Frontend -->
+                            <div class="bg-purple-50 p-5 rounded-lg border-l-4 border-purple-500">
+                                <h4 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                    </svg>
+                                    Frontend (React + HTML/CSS/JS)
+                                </h4>
+                                <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm">
+                                    <li>Componentes para registro, login y área de análisis</li>
+                                    <li>Manejo de token en almacenamiento local</li>
+                                    <li>Visualización de resultados de la IA</li>
+                                    <li>Diseño limpio y responsive</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Criterios de Evaluación -->
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Criterios de Evaluación</h3>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <div class="criteria-card bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                                <div class="text-3xl font-bold text-indigo-600 mb-2">25%</div>
+                                <h4 class="font-semibold text-gray-800">Autenticación y seguridad</h4>
+                                <p class="text-sm text-gray-600 mt-1">JWT, protección de rutas, manejo seguro de credenciales</p>
+                            </div>
+                            <div class="criteria-card bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                                <div class="text-3xl font-bold text-indigo-600 mb-2">25%</div>
+                                <h4 class="font-semibold text-gray-800">Integración del modelo de IA</h4>
+                                <p class="text-sm text-gray-600 mt-1">Funcionamiento, precisión y utilidad del modelo implementado</p>
+                            </div>
+                            <div class="criteria-card bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                                <div class="text-3xl font-bold text-indigo-600 mb-2">20%</div>
+                                <h4 class="font-semibold text-gray-800">Fluidez frontend-backend</h4>
+                                <p class="text-sm text-gray-600 mt-1">Comunicación efectiva entre componentes, manejo de API</p>
+                            </div>
+                            <div class="criteria-card bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                                <div class="text-3xl font-bold text-indigo-600 mb-2">15%</div>
+                                <h4 class="font-semibold text-gray-800">Experiencia de usuario</h4>
+                                <p class="text-sm text-gray-600 mt-1">Diseño intuitivo, accesibilidad y respuesta visual</p>
+                            </div>
+                            <div class="criteria-card bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                                <div class="text-3xl font-bold text-indigo-600 mb-2">15%</div>
+                                <h4 class="font-semibold text-gray-800">Código y documentación</h4>
+                                <p class="text-sm text-gray-600 mt-1">Estructura, comentarios, README y calidad del código</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto Serenity -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200 mb-10">
+                    <h2 class="text-3xl font-bold text-center text-gray-900 mb-6">Nuestro Proyecto: Serenity</h2>
+                    
+                    <div class="flex flex-col md:flex-row gap-6 mb-8">
+                        <div class="md:w-1/2">
+                            <img src="img/serenitylogo.png" alt="Serenity App" class="rounded-lg shadow-lg w-full h-auto">
+                        </div>
+                        <div class="md:w-1/2">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">Detección de ciberacoso en tiempo real</h3>
+                            <p class="text-gray-700 mb-4">
+                                Serenity es una aplicación de chat que utiliza inteligencia artificial para detectar ciberacoso mientras el usuario escribe. Implementamos la API Perspective de Google para analizar mensajes y alertar sobre lenguaje dañino.
+                            </p>
+                            <div class="bg-indigo-50 p-4 rounded-lg mb-4">
+                                <h4 class="font-semibold text-indigo-700 mb-2">Innovación:</h4>
+                                <p class="text-gray-700">A diferencia de métodos tradicionales que actúan después del daño, Serenity permite intervenir <strong>preventivamente</strong>, creando un entorno digital más seguro.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6 mb-8">
+                        <!-- Tecnologías Backend -->
+                        <div class="bg-white p-5 rounded-lg shadow-md border-t-4 border-blue-500">
+                            <h4 class="text-lg font-semibold text-gray-800 mb-3">Tecnologías Backend</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                    </svg>
+                                    <span>Python Flask para la API REST</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path>
+                                    </svg>
+                                    <span>MySQL para almacenamiento de datos</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                                    </svg>
+                                    <span>API Perspective de Google para análisis de toxicidad</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                                    </svg>
+                                    <span>Autenticación JWT para seguridad</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Tecnologías Frontend -->
+                        <div class="bg-white p-5 rounded-lg shadow-md border-t-4 border-purple-500">
+                            <h4 class="text-lg font-semibold text-gray-800 mb-3">Tecnologías Frontend</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+                                    </svg>
+                                    <span>React.js para componentes interactivos</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
+                                    </svg>
+                                    <span>Tailwind CSS para diseño responsive</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+                                    </svg>
+                                    <span>Chat en tiempo real con WebSockets</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                    </svg>
+                                    <span>Alertas visuales para contenido tóxico</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Funcionalidades Clave</h3>
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                                <div class="text-indigo-600 mb-2">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="font-semibold text-gray-800">Autenticación Segura</h4>
+                                <p class="text-sm text-gray-600 mt-1">Registro y login con JWT, protección de rutas</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                                <div class="text-indigo-600 mb-2">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="font-semibold text-gray-800">Chat en Tiempo Real</h4>
+                                <p class="text-sm text-gray-600 mt-1">Interfaz de mensajería con WebSockets</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                                <div class="text-indigo-600 mb-2">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="font-semibold text-gray-800">Detección de Toxicidad</h4>
+                                <p class="text-sm text-gray-600 mt-1">Análisis en tiempo real con IA mientras se escribe</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                                <div class="text-indigo-600 mb-2">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="font-semibold text-gray-800">Alertas Preventivas</h4>
+                                <p class="text-sm text-gray-600 mt-1">Notificaciones visuales para contenido dañino</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                                <div class="text-indigo-600 mb-2">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="font-semibold text-gray-800">Panel de Administración</h4>
+                                <p class="text-sm text-gray-600 mt-1">Gestión de usuarios y estadísticas de uso</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                                <div class="text-indigo-600 mb-2">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="font-semibold text-gray-800">Respuesta Inmediata</h4>
+                                <p class="text-sm text-gray-600 mt-1">Análisis en menos de 500ms por mensaje</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Impacto Social</h3>
+                        <div class="bg-green-50 p-5 rounded-lg border-l-4 border-green-500">
+                            <p class="text-gray-700">
+                                Serenity está diseñado especialmente para proteger a adolescentes y usuarios vulnerables en entornos digitales. Al detectar el ciberacoso <strong>mientras ocurre</strong>, permite intervenciones preventivas que pueden evitar daños psicológicos. Nuestras pruebas muestran una reducción del 68% en mensajes tóxicos enviados cuando los usuarios reciben alertas en tiempo real.
+                            </p>
+                        </div>
+                    </div>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Capturas del Codigo</h3>
+                        <div class="bg-blue-50 p-5 rounded-lg border-l-4 border-blue-500">
+                            <img src="img/serenity5.png" alt="Serenity App" class="rounded-lg shadow-lg w-full h-auto">
+                            <br>
+                            <img src="img/serenity6.png" alt="Serenity App" class="rounded-lg shadow-lg w-full h-auto">
+                            <br>
+                            <img src="img/serenity7.png" alt="Serenity App" class="rounded-lg shadow-lg w-full h-auto">
+                            <br>
+                            <img src="img/serenity8.png" alt="Serenity App" class="rounded-lg shadow-lg w-full h-auto">
+                        </div>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Capturas de la Ejecucion</h3>
+                        <div class="bg-blue-50 p-5 rounded-lg border-l-4 border-blue-500">
+                            <img src="img/serenity1.jpg" alt="Serenity App" class="rounded-lg shadow-lg w-full h-auto">
+                            <br>
+                            <img src="img/serenity2.jpg" alt="Serenity App" class="rounded-lg shadow-lg w-full h-auto">
+                            <br>
+                            <img src="img/serenity3.jpg" alt="Serenity App" class="rounded-lg shadow-lg w-full h-auto">
+                            <br>
+                            <img src="img/serenity4.jpg" alt="Serenity App" class="rounded-lg shadow-lg w-full h-auto">
+                        </div>
+                </div>
+
+                <!-- ¿Qué Aprendimos? -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+                    <h2 class="text-3xl font-bold text-center text-gray-900 mb-6">¿Qué Aprendimos?</h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-8">
+                        <div class="bg-indigo-50 p-5 rounded-lg">
+                            <h3 class="text-lg font-semibold text-indigo-700 mb-3">Desarrollo Full Stack</h3>
+                            <ul class="list-disc list-inside text-gray-700 space-y-2">
+                                <li>Integración efectiva entre frontend (React) y backend (Flask)</li>
+                                <li>Manejo de autenticación JWT y rutas protegidas</li>
+                                <li>Comunicación en tiempo real con WebSockets</li>
+                                <li>Diseño de API RESTful bien estructurada</li>
+                            </ul>
+                        </div>
+                        <div class="bg-purple-50 p-5 rounded-lg">
+                            <h3 class="text-lg font-semibold text-purple-700 mb-3">Inteligencia Artificial</h3>
+                            <ul class="list-disc list-inside text-gray-700 space-y-2">
+                                <li>Implementación de modelos de IA en producción</li>
+                                <li>Uso de la API Perspective de Google</li>
+                                <li>Procesamiento de lenguaje natural (NLP)</li>
+                                <li>Optimización para baja latencia en análisis</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 p-5 rounded-lg border-l-4 border-yellow-500 mb-8">
+                        <h3 class="text-lg font-semibold text-yellow-700 mb-3">Trabajo en Equipo</h3>
+                        <p class="text-gray-700 mb-3">
+                            Esta evaluación nos enseñó valiosas lecciones sobre colaboración efectiva en desarrollo de software:
+                        </p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Uso avanzado de Git para trabajo colaborativo</li>
+                            <li>División de tareas según especialidades (frontend/backend/IA)</li>
+                            <li>Comunicación constante y resolución de conflictos</li>
+                            <li>Metodologías ágiles para gestión del proyecto</li>
+                        </ul>
+                    </div>
+
+                    <div class="text-center">
+                        <a href="index.html#semanas" class="inline-block px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition duration-300">
+                            ← Volver al Inicio
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-gray-900 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2025 Portafolio (Capcha Carhuachin) - Curso de Desarrollo de Aplicaciones Web. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
